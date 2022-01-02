@@ -1,0 +1,99 @@
+<!-- 
+
+1. Padding. it's use to margin the page like when we margin the paper . it's work into the parent property not outsize of the parent height and width. 
+
+    every element has 4 side. 
+    padding: 20 px; means this tag will move 20px from 4 side 
+    padding: 20px 10px; means this tag will move 20px from top and button. and 10px from left and right. 
+
+    padding: 20px 10px 5px; means this tag will move 20px from top 5px from button and 10px from left and right. 
+
+    summary:
+        padding:4_side;
+        padding:top_and_button left_and_right;
+        padding:top left_and_right button;
+
+        spacial is:
+             padding:top right button left;
+
+    also you can use:
+       padding_left:20px;
+        padding_right:20px;
+        padding_top:20px;
+        padding_button:20px;
+
+
+    keep center the div:
+    width:50%;
+    margin:0 auto;
+
+-->
+<!-- 
+
+2. Box Modeling. Box modeling decide how much area a div will take. Box model is combination of 4 parts. 
+    A. height and width
+    B. padding
+    C. border
+    D. margin
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blogContainer {
+            background-color: rgb(229, 193, 145);
+            border: 2px solid yellow;
+            border-radius: 10px;
+            margin: 20px 40px 50px;
+
+            padding: 20px;
+            /* padding: 20px 10px;  */
+            /* padding: 20px 22px 50px; */
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        .authorName {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to my programming Blog</h1>
+
+    <div class="blogContainer">
+        <small>Author: <span class="authorName">Aman Ullha 1</span></small>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga Tuled nym
+            fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+
+    </div>
+
+    <div class="blogContainer">
+        <small>Author: <span class="authorName">Aman Ullha 2</span></small>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+
+    </div>
+
+    <div class="blogContainer">
+        <small>Author: <span class="authorName">Aman Ullha 3</span></small>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+
+    </div>
+
+</body>
+
+</html>
