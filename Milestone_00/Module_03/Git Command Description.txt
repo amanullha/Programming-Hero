@@ -84,6 +84,8 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 
 
+git pull origin main 												pull main branch works from others branch. 
+
 
 
 
