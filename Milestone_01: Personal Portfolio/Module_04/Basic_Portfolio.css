@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+h1{
+    font-size: 50px;
+}
+h2{
+    font-size: 40px;
+}
+p{
+    color: dimgray;
+}
+#idvl{
+    color: rgb(199, 129, 0);
+}
+.top-section-left, .top-section-right ,.experience-section-experiences{
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    padding-left: 2%;
+}
+.top-section-right img{
+    width: 100%;
+}
+.top-section{
+    background-image: url("images/top-section-background-image.png");
+    background-repeat: no-repeat;
+    
+}
+.top-section{
+    background-image: url(images/fullcircle.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 30%;
+    
+}
+
+.link-button{
+    text-decoration: none;
+    background-image: linear-gradient(45deg, rgb(114, 73, 57), rgb(8, 236, 84));
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: rgb(209, 127, 112);
+    font-weight: 700;
+}
+section{
+    height: 500px;
+    padding-bottom: 500px;
+}
+
+.mid-section{
+    background-image: url(images/halfcircle-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position: left;
+
+
+
+}
+.mid-section-left,.mid-section-right {
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    padding-left: 2%;
+}
+.mid-section-left img{
+    width: 100%;
+}
+
+
+
+.experience-section{
+    background-image: url(images/halfcircle-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    
+}
+.experience-section #exp{
+    text-align: center;
+    
+    
+}
+.experience-section-experiences{
+    box-shadow: 10px 10px 40px gray;
+    background-color: white;
+    border-radius: 5px;
+    /* height: 80%; */
+   
+}
+#ese1{
+    border-left: 7px solid;
+    border-image: linear-gradient(180deg, rgb(235, 96, 41), rgb(24, 226, 68));
+    border-image-slice: 1;
+    
+}
+#ese2{
+    border-left: 7px solid;
+    border-image: linear-gradient(180deg, rgb(70, 41, 235), rgb(226, 24, 192));
+    border-image-slice: 1;
+}
+
+
+
+
+footer h5{
+    text-align: center;
+}

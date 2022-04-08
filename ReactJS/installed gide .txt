@@ -1,0 +1,3 @@
+Create new project:
+
+-> npx create-react-app my-app -timeout=60000

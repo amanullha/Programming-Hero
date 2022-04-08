@@ -1,0 +1,20 @@
+/* border-style: solid;
+    border-width: 0;
+    transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;
+    margin-top: -160px;
+    margin-bottom: 0;
+    padding: 80px 90px 80px 72px;
+    z-index: 1; */
+
+.nav-container {
+    background-color: #004643;
+}
+
+.nav-text {
+    transition: 0.5s;
+}
+
+.nav-text:hover {
+    background-color: #012e2c;
+    color: #fffffe;
+}

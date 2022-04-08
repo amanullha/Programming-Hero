@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Leanne Graham Bell",
+        "thumb": "https://randomuser.me/api/portraits/men/42.jpg",
+        "email": "Sincere@april.biz",
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org"
+    },
+    {
+        "id": 2,
+        "name": "Ervin Howell Bell",
+        "thumb": "https://randomuser.me/api/portraits/men/60.jpg",
+        "email": "Shanna@melissa.tv",
+        "phone": "010-692-6593 x09125",
+        "website": "anastasia.net"
+    },
+    {
+        "id": 3,
+        "name": "Clementine Bauch",
+        "thumb": "https://randomuser.me/api/portraits/men/79.jpg",
+        "email": "Nathan@yesenia.net",
+        "phone": "1-463-123-4447",
+        "website": "ramiro.info"
+    },
+    {
+        "id": 4,
+        "name": "Patricia Lebsack",
+        "thumb": "https://randomuser.me/api/portraits/men/82.jpg",
+        "email": "Julianne@kory.org",
+        "phone": "493-170-9623 x156",
+        "website": "kale.biz"
+    },
+    {
+        "id": 5,
+        "name": "Chelsey Dietrich Patricia",
+        "thumb": "https://randomuser.me/api/portraits/women/89.jpg",
+        "email": "Luci_Hetinger@anie.ca",
+        "phone": "(254)954-1289",
+        "website": "demarco.info"
+    },
+    {
+        "id": 6,
+        "name": "Mrs. Dennis Schulist",
+        "thumb": "https://randomuser.me/api/portraits/women/44.jpg",
+        "email": "Karley_Dach@jasper.info",
+        "phone": "1-477-935-8478 x6430",
+        "website": "ola.org"
+    },
+    {
+        "id": 7,
+        "name": "Kurtis Weissnat Patricia",
+        "thumb": "https://randomuser.me/api/portraits/women/17.jpg",
+        "email": "Telly.Hoeger@billy.biz",
+        "phone": "210.067.6132",
+        "website": "elvis.io"
+    },
+    {
+        "id": 8,
+        "name": "Nicholas Runolfsdottir",
+        "thumb": "https://randomuser.me/api/portraits/men/20.jpg",
+        "email": "Shd@rosamond.me",
+        "phone": "586.493.6943 x140",
+        "website": "jacynthe.com"
+    }
+]

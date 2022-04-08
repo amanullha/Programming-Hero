@@ -1,0 +1,59 @@
+<!-- 
+ 1. Audio
+    A. add single audio
+        <audio src="file.mp3" type="audio/mp3" controls >
+
+    B. add multiple audio
+
+        <audio control>
+            <source src="file.mp3" type=audio/mp3>
+            <source src="file.mp3" type=audio/mp3>
+            <source src="file.mp3" type=audio/mp3>
+        </audion>
+
+    C. audio attribute 
+
+        autoplay  -> Specifies that the audio will start playing as soon as it is ready
+        controls  -> Specifies that audio controls should be displayed (such as a play/pause button etc)
+        loop      -> Specifies that the audio will start over again, every time it is finished
+        muted     -> Specifies that the audio output should be muted
+        preload   -> Specifies if and how the author thinks the audio should be loaded when the page loads
+
+
+
+ 2. video
+        Same as audio but you can user height and width 
+        <video src="movie.ogg" type="video/ogg" controls autoplay height=600 width=200>
+
+ 3. embed iframe
+
+            An HTML iframe is used to display a web page within a web page.Use embeded code with iframe to display youtube videos
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FPNUC58nTyI" title="YouTube video player"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FPNUC58nTyI" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25-8 (advanced) Event delegate and benefit of Event bubble
+    </title>
+</head>
+
+<body>
+
+
+    <h2>Event delegate</h2>
+
+    <ul id="item-container">
+        <li class="item">1 lorem,ipsum</li>
+        <li class="item">2 lorem,ipsum</li>
+        <li class="item">3 lorem,ipsum</li>
+        <li class="item">4 lorem,ipsum</li>
+        <li class="item">5 lorem,ipsum</li>
+        <li class="item">6 lorem,ipsum</li>
+    </ul>
+    <button id="add-item">Add item</button>
+    <script>
+        const items = document.getElementsByClassName('item');
+
+        // for (const item of items) {
+
+        //     item.addEventListener('click', function (event) {
+        //         // Way 1 without event paremeter
+        //         // document.getElementById("item-container").removeChild(item);
+
+        //         // Way 2 without event paremeter
+        //         // item.parentNode.removeChild(item);
+
+
+        //         // Way 3 with event paremeter
+        //         // event.target=clicked item / Current item
+
+        //         // event.target.parentNode.removeChild(item);
+        //         // item=event.target
+        //         event.target.parentNode.removeChild(event.target);
+
+
+
+        //     })
+        // }
+
+
+        document.getElementById('add-item').addEventListener('click', function () {
+
+            const li = document.createElement('li');
+            li.innerText = "New item";
+            li.classList.add('item');
+
+            const parent = document.getElementById('item-container');
+            parent.appendChild(li);
+
+        })
+
+        // It's call event delegate
+        document.getElementById('item-container').addEventListener('click', function (event) {
+
+            //find the clicked item into the parent
+            // event.target=ckicked item 
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+
+</body>
+
+</html>

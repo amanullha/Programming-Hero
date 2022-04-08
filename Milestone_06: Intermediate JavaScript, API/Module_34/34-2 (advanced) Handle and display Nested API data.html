@@ -1,0 +1,63 @@
+<!-- 
+    lanye.rest
+
+    https://api.kanye.rest/
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buddes</title>
+</head>
+
+<body>
+    <h1>Kenye Quotes</h1>
+    <button id="load-quotes">Load Quotes</button>
+    <div style="text-align: center;" id="quote"></div>
+
+
+
+    <script>
+
+        const loadQuotes = document.getElementById('load-quotes');
+
+        loadQuotes.addEventListener('click', function
+            () {
+            fetch('https://randomuser.me/api/?results=1').then(respons => respons.json()).then(data => loadData(data));
+        })
+
+        const quoteData = document.getElementById('quote');
+
+        function loadData(quotes) {
+
+            console.log(quotes.results);
+
+            (quotes.results).map(item => {
+
+                const bName = item.name.first;
+                const bPicture = item.picture.medium;
+                const bEmail = item.email;
+
+                quoteData.innerHTML = `
+
+                   
+                     <img style="border-redious:50%;" src="${bPicture}" alt="" srcset="">
+                    <br>
+                    <h3>${bName}</h3>
+                    
+                    <h4>${bEmail}</h4>
+
+                `;
+
+
+            });
+
+        }
+    </script>
+</body>
+
+</html>

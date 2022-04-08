@@ -1,0 +1,24 @@
+.form-area input,
+.form-btn,
+textarea {
+    display: block;
+    border: none;
+    outline: none;
+    width: 100%;
+    transition: 0.3s;
+}
+
+textarea {
+    height: 150px;
+}
+
+.form-area input,
+textarea {
+    background-color: rgb(227, 242, 255);
+}
+
+.form-area input:hover,
+textarea:hover,
+form-btn:hover {
+    box-shadow: 2px 2px 4px rgb(100, 100, 100);
+}

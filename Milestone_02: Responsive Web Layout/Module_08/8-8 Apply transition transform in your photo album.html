@@ -1,0 +1,188 @@
+<!--
+     
+    column-count: 2; 
+
+    make 2 column the text 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-7 Create a Photo Album using relative position and flexbox
+    </title>
+    <style>
+        .photo-album {
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+
+        }
+
+        .photo-album .photo-frame {
+            /* background-color: rgb(73, 129, 51); */
+            /* border: 2px solid goldenrod; */
+            border-radius: 10px;
+            /* padding: 10px; */
+            width: 300px;
+            height: 170px;
+            position: relative;
+            margin: 5px;
+            overflow: hidden;
+        }
+
+        .photo-album .photo-frame:hover .photo-details {
+            display: block;
+        }
+
+        .photo-album .photo-frame:hover .photo {
+            border: 3px solid black;
+            background-color: black;
+            border-radius: 15px;
+
+
+            transform: scale(2.5) rotate(360deg);
+            transition: transform 1s ease-in;
+        }
+
+        .photo-album .photo-frame .photo {
+            /* background-color: rgb(230, 203, 51); */
+            /* padding: 10px; */
+        }
+
+        .photo-album .photo-frame .photo img {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        .photo-album .photo-frame .photo-details {
+            background-color: rgba(8, 8, 8, 0.26);
+            padding: 10px;
+            position: absolute;
+            top: 0px;
+            display: none;
+            color: aliceblue;
+        }
+
+        .photo-album .photo-frame .photo-details p {
+            text-align: justify;
+            padding: 2px;
+            /* column-count: 2; */
+        }
+
+        .photo-album .photo-frame .photo-details h3 {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.445);
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Photo Album With HTML and CSS</h1>
+    <div class="photo-album">
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+        <div class="photo-frame">
+            <div class="photo">
+                <img src="images/img2.jpg" alt="">
+            </div>
+            <div class="photo-details">
+                <h3>Photo candid</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, quia? Exercitationem, eius quae
+                    repellendus odio, ab sequi hic repudiandae suscipit in autem natus ex quod
+                    voluptatem minima nostrum.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

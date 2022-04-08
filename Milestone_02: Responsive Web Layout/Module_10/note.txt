@@ -1,0 +1,5 @@
+Have to learn 
+    
+    1. Advanced selector in CSS
+    2. BEM CSS
+    3. CSS style gide line

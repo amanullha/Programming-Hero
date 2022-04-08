@@ -1,0 +1,68 @@
+.tags_input {
+  /* display: flex; */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 48px;
+  width: auto;
+  padding: 0 8px;
+  border: none;
+  border-radius: 6px;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.tags_input input {
+  flex: 1;
+  border: none;
+  height: 46px;
+  font-size: 14px;
+  padding: 4px 0 0 0;
+}
+.tags_input input:focus {
+  outline: none;
+}
+.tags_ul {
+  /* display: flex; */
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.tag {
+  width: auto;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0 8px;
+  font-size: 14px;
+  list-style: none;
+  border-radius: 6px;
+  margin: 0 8px 8px 0;
+  background: #00cffc;
+}
+
+.tag .tag_title {
+  margin-top: 3px;
+}
+.tag .tag_close_icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 8px;
+  color: #00cffc;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+@media screen and (max-width: 567px) {
+  .tags_input {
+    width: calc(100vw - 32px);
+  }
+}

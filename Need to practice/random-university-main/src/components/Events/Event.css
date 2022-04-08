@@ -1,0 +1,24 @@
+.event-banner {
+    background-image: url(../../img/eventsBanner.jpg);
+}
+
+.img-cont {
+    overflow: hidden;
+}
+
+.card-top-img img {
+    transition: transform .5s ease;
+}
+
+.card-top-img:hover img {
+    transform: scale(1.5);
+
+}
+
+.card-top-img:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.calender {
+    font-size: 30px;
+}

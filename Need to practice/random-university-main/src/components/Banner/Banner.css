@@ -1,0 +1,13 @@
+.banner-container {
+    background-image: url(../../img/banner.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.text-container {
+    background-color: #00464377;
+    color: #fffffe;
+}

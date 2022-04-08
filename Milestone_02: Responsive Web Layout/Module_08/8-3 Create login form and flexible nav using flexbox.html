@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/15c163ad5e.js" crossorigin="anonymous"></script>
+    <title>8-3 Create login form and flexible nav using flexbox
+    </title>
+    <style>
+        .log-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .login-form input {
+
+            font-size: 1.5em;
+            border: none;
+            border-bottom: 1px solid black;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: large;
+            margin-right: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <span>
+                <a href="http://">Home</a>
+                <a href="http://">Products</a>
+                <a href="http://">Orders</a>
+                <a href="http://">Usert</a>
+                <a href="http://">Address</a>
+            </span>
+            <span>
+                <a href="http://"><i class="fas fa-users"></i></a>
+                <a href="http://"><i class="fas fa-sign-out-alt"></i></a>
+            </span>
+        </nav>
+    </header>
+
+
+
+
+    <section class="log-container">
+        <form action="" class="login-form">
+            <h2>Loging</h2>
+            <input type="email" name="email" placeholder=" Your email" required>
+            <input type="password" name="password" placeholder="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+</body>
+
+</html>

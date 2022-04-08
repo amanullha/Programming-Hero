@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Money Processing</title>
+</head>
+
+<body>
+    <header>
+        <h1 class=" text-5xl text-center p-5 m-5">Lets Process <span class="font-bold text-green-600">The money</span>
+        </h1>
+    </header>
+    <main class=" w-3/4 mx-auto ">
+        <!-- balance and transection -->
+        <section class="my-5">
+
+            <div class="grid  gap-5 text-white grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+
+                <div class="bg-blue-500 p-8 rounded">
+
+                    <h3 class="sm:text-3xl">Deposit</h3>
+                    <h3 class="sm:text-4xl">$<span id="deposit-total">00</span></h3>
+
+                </div>
+
+                <div class="bg-green-500 p-8 rounded">
+
+                    <h3 class="sm:text-3xl">Withdrow</h3>
+
+                    <h3 class="sm:text-4xl">$<span id="withdrow-total">00</span></h3>
+
+                </div>
+
+                <div class="bg-yellow-500 p-8 rounded">
+
+                    <h3 class="sm:text-3xl">Balance</h3>
+                    <h3 class="sm:text-4xl">$<span id="total-amount">00</span></h3>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Deposit and Withdrow -->
+        <section class="mt-10">
+            <div class="grid gap-5  grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 ">
+                <div class="bg-gray-400 p-5 rounded">
+
+                    <h3 class="text-3xl text-center">Please Deposit</h3>
+
+                    <div class="flex flex-col gap-5 w-3/4  p-5 mx-auto">
+
+                        <span id="deposit-warning" class="text-red-500 text-center"></span>
+
+                        <input id='deposit-amount' class="py-1 px-5" type="number" placeholder="$ Enter Amount">
+
+
+                        <button id="deposit-submit"
+                            class=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded ">
+                            Deposit
+                        </button>
+
+                    </div>
+                </div>
+                <div class="bg-gray-400 p-5 rounded">
+                    <h3 class="text-3xl text-center">Please Withdrow</h3>
+
+                    <div class="flex flex-col gap-5 w-3/4  p-5 mx-auto">
+
+                        <span id="withdrow-warning" class="text-red-500 text-center"></span>
+
+                        <input id='withdrow-amount' class="py-1 px-5" type="number" placeholder="$ Enter Amount">
+
+
+                        <button id="withdrow-submit"
+                            class=" bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded ">
+                            Withdrow
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="banking.js"></script>
+</body>
+
+</html>

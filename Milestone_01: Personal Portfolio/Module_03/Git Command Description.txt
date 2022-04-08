@@ -1,0 +1,137 @@
+First time :
+
+git init																		initialize git to the folder/directory.
+
+git add README.md												(optional) add description about your works.
+
+git commit -m "commit comment"							put a comment about your works update.
+
+git config --global user.email "you@gmail.com"		after git commit git will not accept commit . if you are in first time then you have to identify the author with your gmail and user name . git know you. that's why you have to introduce youself.
+
+git config -- global user.name "your Name"				put your user name which are you set in git profile
+
+git commit -m "commit comment"							after introduce yourself you have to commit again. put a comment about your works update.
+
+git branch -M main													show the path. where you want to upload your works to the main branch or others. 
+
+git remote add origin https://github.com 					connect the folder/directory with the github repo.
+
+git push -u origin main 											after complete the packing your works and showed the path , you have to push the works to the destination . 
+
+
+
+if you update works in your computer folder/directory you have to update it's to git repo . After added first time :
+
+git add just_a_file.txt												Add just a file into the git 
+
+git add .																	all the the file into the git 
+
+git commit -m "comment"										write about changes or updates
+
+
+
+
+
+Host simple website in gitHub using gh-pages:
+
+select repo-> settings->pages->main branch->get link
+select repo-> settings->pages->main branch->get link -> go to which html file you want to publish
+
+
+
+Team works, Create others branch,Create git branch, merge branches:
+
+git branch																List branches (the asterisk denotes the current branch)
+
+git branch -a															List all branches (local and remote)
+
+git branch	[branch name]										Create a new branch
+
+git branch -d [branch name]									Delete a branch
+
+git checkout [branch name]										Switch to a branch
+
+
+then if you add file to the sub branch, which you have created then your have to follow this:
+
+git commit -m "comment"										write about changes or updates
+
+git push 																	it will show error first time adding. then you have to excute next line command ot set the upstream origin.others no need anything.
+
+git push --set-upstream origin [branch name]			The current branch [branch name] has no upstream branch. measn you have not created a branch to the git . so you have to create a branch as same name which was created to the local folder/directory.First adding it's need. 
+
+
+
+
+marge sub-branch with main branch:
+
+git branch 																see which branch you r in.
+
+git checkout main 													go to the main branch. you have to go to this branch with which branch you will marge the sub-branch.
+
+git marge [branch name]											marge sub-branch code with the main branch. the you have to push or excute next command
+
+git push 																	after marge works in local folder/directory the you have to push to the main branch. 
+
+
+
+
+
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+
+git pull origin main 												pull main branch works from others branch. 
+
+
+
+clone project with all commit with time , like you pushed on you git
+ $ git clone --bear url
+then go to this clone folder . then push all files to the your own repo 
+ $ git push --mirror your_repo_url
+then change the origin of the cloned folder, because the clone folder carray his woner, who was the owner before clone. 
+ $ git remote set-url your_repo_url
+
+
+
+
+
+Delete initial git file from folder in desktop. 
+
+	it happend when we clone a private repo . because in the private rep alrady have a git init file. because git init file created by the creator of the main file.  
+
+	command: rm -rf .git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

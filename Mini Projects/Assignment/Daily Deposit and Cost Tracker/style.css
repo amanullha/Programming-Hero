@@ -1,0 +1,33 @@
+label {
+    font-size: .8rem;
+    justify-self: end;
+}
+input{
+    border-radius: 10px;
+}
+
+ #image {
+       background-image: url(photo.jpg);
+       background-repeat: no-repeat;
+       background-position: center center;
+       -webkit-background-size: cover;
+       background-size: cover;
+    }
+#img{
+    width: 100%;
+}
+main{
+    width: 100%;
+}
+header{
+    width: 100%;
+}
+
+
+/* Remove Arrows/Spinners */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

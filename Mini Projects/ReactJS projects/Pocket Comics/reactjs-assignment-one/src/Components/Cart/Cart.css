@@ -1,0 +1,53 @@
+.cart-container{
+    position: sticky;
+    top: 100px;
+}
+.cart-container h2{
+   text-align: center;
+}
+
+
+.operation{
+    margin-top: 50px;
+    text-align: center;
+}
+.operation .clear{
+    padding: 10px;
+    font-weight: 700;
+    font-size: larger;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(233, 150, 122, 0.671);
+    color: rgba(62, 13, 196, 0.808);
+}
+.operation .clear:hover{
+   
+    background-color: rgba(184, 56, 13, 0.671);
+    color: rgba(253, 229, 11, 0.808);
+}
+.operation .clear:active{
+   
+    color: rgba(158, 17, 6, 0.808);
+}
+
+.operation .oneforme{
+    padding: 10px;
+    font-weight: 700;
+    font-size: larger;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(233, 150, 122, 0.671);
+    color: rgba(10, 126, 49, 0.808);
+}
+.operation .oneforme:hover{
+   
+    background-color: rgba(184, 56, 13, 0.671);
+    color: rgba(253, 229, 11, 0.808);
+}
+.operation .oneforme:active{
+   
+    color: rgba(158, 17, 6, 0.808);
+}
+

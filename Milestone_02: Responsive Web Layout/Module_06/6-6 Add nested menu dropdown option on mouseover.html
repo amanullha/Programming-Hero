@@ -1,0 +1,93 @@
+<!-- 
+1. Make nav immediate child flex 
+    nav > ul {}
+    '>' it's means immediate child
+
+2.  At the beginning hide sub-nav option defualt hide. sub-nav is called drop-down
+    .drop-down {
+        display: none;
+    }
+3. position:absulate; means create a new webpage over the exesting webpage. 
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple nav</title>
+    <style>
+        nav li {
+            list-style: none;
+            margin-right: 20px;
+            padding: 10px 20px;
+        }
+
+        nav li a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+
+        nav li a:hover {
+            background-color: rgb(192, 105, 105);
+        }
+
+        nav>ul {
+            display: flex;
+        }
+
+        .drop-down {
+            display: none;
+            position: absolute;
+            background-color: aquamarine;
+        }
+
+        nav>ul>li>:hover>ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">line -1
+
+                        <ul class="drop-down">
+                            <li>sub li -1</li>
+                            <li>sub li -2</li>
+                            <li>sub li -3</li>
+                            <li>sub li -4</li>
+                        </ul>
+
+
+                    </a></li>
+                <li><a href="">line -2</a></li>
+                <li><a href="">line -3</a></li>
+                <li><a href="">line -4
+
+                        <ul class="drop-down">
+                            <li>sub li -1</li>
+                            <li>sub li -2</li>
+                            <li>sub li -3</li>
+                            <li>sub li -4</li>
+                        </ul>
+
+
+                    </a></li>
+                <li><a href="">line -5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>hello Duo magna amet dolor duo lorem dolores duo. Et ea.every one</h1>
+</body>
+
+</html>

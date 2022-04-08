@@ -1,0 +1,213 @@
+<!-- https://github.com/Porgramming-Hero-web-course/money-master-amanullha -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind link  -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- External css link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- link to font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Daily deposit and cost tracker</title>
+</head>
+
+<body class="flex flex-col items-center">
+
+    <!-- <body class=""> -->
+
+
+    <header class="bg-gray-300 py-5 mb-5">
+        <section class="web-heading flex justify-center items-center">
+
+            <div class="logo"></div>
+            <div title="Daily deposit and cost tracker" class="web-title text-5xl text-center text-yellow-900">
+                <h1>DD Cost Tracker</h1>
+            </div>
+
+        </section>
+    </header>
+
+    <main class="flex flex-col items-center ">
+        <section class="container  flex flex-col items-center">
+
+
+            <div class="grid lg:grid-cols-2 grid-cols-1 ">
+
+                <!-- Image section -->
+                <div id="image" class="image bg-red-100">
+                    <img class="img invisible relative" id="img" src="photo.jpg" alt="calculation image" srcset="">
+                </div>
+
+
+                <!-- Calculation section -->
+                <div id="calculation" class=" calculation bg-red-100 p-5 ">
+
+
+                    <!-- Income statements -->
+                    <div class="income-section mb-4">
+                        <h3 class="text-3xl text-center mb-3">Income Statements</h3>
+
+                        <div id="income-input-class" class="income-input flex justify-center items-center">
+
+                            <label for="income-input">Income: &nbsp</label>
+
+                            <input class="px-3 py-1  " type="number" id="income-input" value="0">
+
+
+                            <div id="income-check" class="isValidInput">
+                                <i></i>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Expense Statemens -->
+                    <div class="expense-section">
+                        <h3 class="text-3xl text-center mb-3">Expense Statements</h3>
+
+
+                        <div id="expense-warning" class=" text-red-700 text-center mb-3 relative invisible"> please fill
+                            all
+                            the input
+                        </div>
+
+                        <!--  rant input -->
+                        <div id="rent-input-class" class="expense-input mb-2 flex justify-center items-center">
+
+                            <label for="rent-input">Rent : &nbsp &nbsp &nbsp</label>
+
+                            <input class="px-3 py-1" type="number" id="rent-input" value="0" required>
+
+
+                            <div id="rent-check" class="isValidInput">
+                                <i></i>
+
+                            </div>
+
+                        </div>
+                        <!-- foods input  -->
+                        <div id="foods-input-class" class="expense-input mb-2 flex justify-center items-center">
+
+                            <label for="expense-food-input">Foods : &nbsp &nbsp </label>
+
+                            <input class="px-3 py-1" type="number" id="foods-input" value="0" required>
+
+                            <div id="foods-check" class="isValidInput">
+                                <i></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- clothes input  -->
+                        <div id="clothes-input-class" class="expense-input mb-2 flex justify-center items-center">
+
+                            <label for="expense-clothes-input">Clothes :&nbsp </label>
+
+                            <input class="px-3 py-1" type="number" id="clothes-input" value="0" required>
+
+                            <div id="clothes-check" class="isValidInput">
+                                <i></i>
+                            </div>
+
+
+                        </div>
+
+                        <!-- utilities input  -->
+                        <div id="utilities-input-class" class="expense-input flex justify-center items-center">
+
+                            <label for="utilities-input">Utilities :&nbsp </label>
+
+                            <input class="px-3 py-1" type="number" id="utilities-input" value="0" required>
+
+                            <div id="utilities-check" class="isValidInput">
+                                <i></i>
+
+                            </div>
+
+
+                        </div>
+
+                        <!-- calculation section  -->
+
+                        <div class="claculation-section flex  flex-col items-center ">
+
+                            <button id="expense-calculate-button"
+                                class="text-center h-10 px-24 m-4 text-indigo-100 transition-colors duration-150 bg-indigo-600 rounded-lg focus:shadow-outline hover:bg-indigo-800">calculate</button>
+
+                            <div class="total-expense">
+                                <h3>Total Expense: <span id="total-expense">000</span><span> Taka</span></h3>
+                            </div>
+
+                            <div class="total-balance">
+                                <h3>Total Balance: <span id="total-balance">000</span><span> Taka</span></h3>
+                            </div>
+
+                        </div>
+                        <!-- saving section start -->
+                        <div class="saving-section flex flex-col items-center justify-center">
+
+                            <!-- saving warning -->
+                            <div id="saving-warning" class=" text-red-700 text-center mb-3 relative">
+
+                            </div>
+
+                            <div class=" flex flex-row items-center mb-3">
+
+
+                                <h3 class="mr-1">Save </h3>
+
+                                <input style="width: 70px;" class=" px-2 text-center" type="number" name=""
+                                    id="saveing-input" value="0">
+
+                                <span class="text-green-800 px-2">%</span>
+
+                                <button id="saving-button"
+                                    class="text-center px-4 py-1 text-indigo-100 transition-colors duration-150 bg-indigo-600 rounded-lg focus:shadow-outline hover:bg-indigo-800">Save</button>
+
+                            </div>
+
+                            <div class="">
+                                <h3>Saving Amount: <span id="total-saving">000</span><span> Taka</span></h3>
+                            </div>
+                            <div class="total-balance">
+                                <h3>Remaining Balance: <span id="remaining-balance">000</span><span> Taka</span></h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

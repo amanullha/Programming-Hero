@@ -1,0 +1,11 @@
+.about-banner {
+    background-image: url(../../img/about-banner.jpg);
+}
+
+.about-hr {
+    width: 55%;
+    margin: 0;
+    border-style: solid;
+    border-width: 4px 0 0 0;
+    color: #001e1d;
+}

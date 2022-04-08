@@ -1,0 +1,55 @@
+<!-- 
+    
+1. move div contents to center
+    display:flex;
+    justify-content:center
+
+2. take full width form right side 
+    flex-grow:1;
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex box</title>
+    <style>
+        .container {
+            height: 500px;
+            width: 800px;
+            background-color: rgba(170, 108, 228, 0.472);
+            border: 2px dotted black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box {
+            width: 100px;
+            height: 120px;
+            border: 2px solid green;
+            font-size: large;
+            margin: 5px;
+        }
+
+        .stress {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>flexbox</h1>
+    <div class="container">
+        <div class="box">box-1</div>
+        <div class="box stress">box-2</div>
+
+    </div>
+</body>
+
+</html>

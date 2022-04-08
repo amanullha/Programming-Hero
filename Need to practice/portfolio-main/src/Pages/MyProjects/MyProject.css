@@ -1,0 +1,12 @@
+.modal-btn {
+    background: linear-gradient(-30deg, #d85802 50%, #ff8906 50%);
+    transition: 0.3s;
+}
+
+.modal-btn:hover {
+    background: linear-gradient(-30deg, #ff8906 50%, #d85802 50%);
+}
+
+.orange-border {
+    border: 2px solid #ff8906;
+}

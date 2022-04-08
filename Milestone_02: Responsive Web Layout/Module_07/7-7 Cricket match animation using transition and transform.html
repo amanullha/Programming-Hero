@@ -1,0 +1,64 @@
+<!-- 
+1. transform-origin: top right;
+
+    move transform origin to top right corner from the center 
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-7 Cricket match animation using transition and transform
+    </title>
+    <style>
+        .bat {
+            transition: transform 0.7s ease-in;
+            /* ease-in -> slow at first then fast */
+        }
+
+        .field:hover .bat {
+            transform-origin: top right;
+            transform: rotate(-90deg);
+
+        }
+
+        .field {
+            border: 2px solid rgb(182, 167, 167);
+        }
+
+        .ball {
+            background-color: rgb(104, 22, 22);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            position: relative;
+            left: 510px;
+        }
+
+        .field:hover .ball {
+            transform: translate(600px, -200px);
+            transition: transform 1s .5s;
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="field">
+        <img class="bat" src="images/bat.png" alt="">
+        <div class="ball"></div>
+    </div>
+
+    <audio class="hit" src="audio/ballHit.mp3" controls autoplay></audio>
+   
+
+</body>
+
+</html>

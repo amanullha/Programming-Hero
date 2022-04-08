@@ -1,0 +1,82 @@
+<!-- 
+1. Event Bubble
+
+    Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside another element, and both elements have registered a handle to that event. It is a process that starts with the element that triggered the event and then bubbles up to the containing elements in the hierarchy. In event bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+2. How to stop Event Bubble
+
+    The event. stopPropagation() method stops the bubbling of an event to parent elements, preventing any parent event handlers from being executed. 
+
+    function(event){
+       event.stopPropagation();
+    }
+
+3. Stop Immediate propagation
+
+    nijer bitor onkgola event thakle just ekta bade baki shob gola stop kore dibe
+
+    function(event){
+        event.stopImmediatePropagation();
+    }
+    
+
+
+
+
+ -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25-7 (semi-advanced) Event bubble and Stop propagating
+    </title>
+</head>
+
+<body>
+    <section id="section-container">
+        <h2>Event bubble vai</h2>
+        <ul id="list-container">
+            <li class="item">Lorem,ipsum</li>
+            <li id="second-item" class="item">Lorem,ipsum</li>
+            <li class="item">Lorem,ipsum</li>
+            <li class="item">Lorem,ipsum</li>
+            <li class="item">Lorem,ipsum</li>
+            <li class="item">Lorem,ipsum</li>
+        </ul>
+    </section>
+
+    <script>
+        // ul li
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log("item clicked1");
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+
+        })
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log("item clicked2");
+            // event.stopPropagation();
+        })
+        document.getElementById('second-item').addEventListener('click', function (event) {
+            console.log("item clicked3");
+            // event.stopPropagation();
+        })
+        // List container
+
+        document.getElementById('section-container').addEventListener('click', function () {
+            console.log("section clicked");
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+/* responsive for phone device start */
+
+@media screen and (max-width: 500px) {
+  .search-box{
+
+    width: 90%;
+
+  }
+  body{
+      /* background-color: rgba(243, 235, 235, 0.733) !important; */
+  }
+}
+@media screen and (min-width: 501px) {
+  .search-box{
+
+    width: 50%;
+
+  }
+}
+/* responsive for phone device ends */

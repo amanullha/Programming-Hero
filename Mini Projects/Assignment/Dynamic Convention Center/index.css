@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+body{
+    
+font-family: 'Poppins';
+}
+
+header{
+    background-color: rgb(242, 242, 250);
+}
+section{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.nav-bg{
+    background-color: transparent !important;
+
+}
+.nav-item:hover{
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.404) !important;
+}
+.carousel-item::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.4;
+}
+
+
+
+/* css for our pakages */
+.card{
+    border: none !important;
+    /* background-color: #3f87f6 !important;
+    color: white !important;
+    border-radius: 30px !important; */
+    
+    
+}
+.toast-col .card{
+    /* background-color: #3f87f6 !important; */
+    background-color:#094109f8 !important;
+    /* color: white !important; */
+    border-radius: 30px !important;
+
+}
+.toast-col .card-body h5 ,.toast-col .card-body p,.toast-col .card-body small{
+    color: white !important;
+
+}
+
+.card-footer{
+    border: none !important;
+    background-color: transparent !important;
+}
+
+/* accordion css start  */
+
+.accordion-child{
+
+}
+
+
+/* css for footer  */
+@media only screen and (max-width: 583px) {
+  .footer-phone {
+    flex-direction: column-reverse;
+    padding: 20px;
+   
+  }
+  .footer-phone .right{
+      margin-bottom: 10px;
+  }
+}

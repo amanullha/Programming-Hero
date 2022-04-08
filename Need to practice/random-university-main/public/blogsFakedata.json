@@ -1,0 +1,105 @@
+[
+    {
+        "id": 1,
+        "title": "The Palace of Clouds",
+        "description": "Sajek valley is 2000 feet above sea level. Sajek valley is known as the Queen of Hills & Roof of Rangamati. The name of Sajek Valley came from Sajek River that originates from Karnafuli river. Sajek river is working as a border between Bangladesh and India.",
+        "place": "Sajek Valley",
+        "country": "Bangladesh",
+        "thumb": "https://avijatrik.org/wp-content/uploads/2019/06/cover22-870x555.jpg",
+        "star": 3.7,
+        "starCount": 8716,
+        "cost": "43 mins"
+    },
+    {
+        "id": 2,
+        "title": "Huge Coral Reef Island",
+        "description": "St Martin’s Island a small island in the northeast of the bay of bengal, about 9 km south of the Cox’s Bazar-Teknaf peninsular tip and forming the southernmost part of Bangladesh. It is about 8 km west of the northwest coast of Myanmar at the mouth of the river naf. ",
+        "place": "St. Martin's Island",
+        "country": "Bangladesh",
+        "thumb": "https://www.assignmentpoint.com/wp-content/uploads/2017/10/saint-martin-bangladesh-1.jpg",
+        "via": "Plane, Bus, Ship",
+        "star": 4.6,
+        "starCount": 4031,
+        "cost": "12 hours"
+    },
+    {
+        "id": 5,
+        "title": "The City of Wonder",
+        "description": "The old walled city of Istanbul stands on a triangular peninsula between Europe and Asia. Sometimes as a bridge, sometimes as a barrier, Istanbul for more than 2,500 years has stood between conflicting surges of religion, culture, and imperial power.",
+        "place": "Istanbul",
+        "country": "Turkey",
+        "thumb": "https://www.worldatlas.com/r/w1200/upload/00/88/e2/istanbul-bosphorus-strait.jpg",
+        "star": 5,
+        "starCount": 6567,
+        "cost": "5 mins"
+    },
+    {
+        "id": 6,
+        "title": "The City of Blue",
+        "description": "The old walled city of Istanbul stands on a triangular peninsula between Europe and Asia. Sometimes as a bridge, sometimes as a barrier, Istanbul for more than 2,500 years has stood between conflicting surges of religion, culture, and imperial power. For most of those years it was one of the most coveted cities in the world.",
+        "place": "Athens",
+        "country": "Greece",
+        "thumb": "https://www.tourmag.com/photo/art/default/7732587-11968584.jpg?v=1430253115",
+        "star": 4.9,
+        "starCount": 3567,
+        "cost": "3 hours"
+    },
+    {
+        "id": 3,
+        "title": "The Wonder of Nature",
+        "description": "The old walled city of Istanbul stands on a triangular peninsula between Europe and Asia. Sometimes as a bridge, sometimes as a barrier, Istanbul for more than 2,500 years has stood between conflicting surges of religion, culture, and imperial power. For most of those years it was one of the most coveted cities in the world.",
+        "place": "Sundarbans",
+        "dist": "Khulna Division",
+        "country": "Bangladesh",
+        "thumb": "https://media-eng.dhakatribune.com/uploads/2020/09/9-new-project-1599296482873.jpg",
+        "star": 4.4,
+        "starCount": 2628,
+        "cost": "1 days"
+    },
+    {
+        "id": 4,
+        "title": "Are you a Tea Lover",
+        "description": "The old walled city of Istanbul stands on a triangular peninsula between Europe and Asia. Sometimes as a bridge, sometimes as a barrier, Istanbul for more than 2,500 years has stood between conflicting surges of religion, culture, and imperial power. For most of those years it was one of the most coveted cities in the world.",
+        "place": "Sreemangal",
+        "country": "Bangladesh",
+        "thumb": "https://chokkor.com/wp-content/uploads/2018/10/Sreemangal-1.jpg",
+        "star": 4.5,
+        "starCount": 5628,
+        "cost": "2 days"
+    },
+    {
+        "id": 7,
+        "title": "A city of Dream",
+        "description": "The old walled city of Istanbul stands on a triangular peninsula between Europe and Asia. Sometimes as a bridge, sometimes as a barrier, Istanbul for more than 2,500 years has stood between conflicting surges of religion, culture, and imperial power. For most of those years it was one of the most coveted cities in the world.",
+        "place": "Bali",
+        "country": "Island in Indonesia",
+        "thumb": "https://www.traveldailymedia.com/assets/2020/07/bali.jpg",
+        "star": 4.5,
+        "starCount": 1410,
+        "cost": "7 days"
+    },
+    {
+        "id": 8,
+        "title": "The Colorfull City",
+        "description": "The old walled city of Istanbul stands on a triangular peninsula between Europe and Asia. Sometimes as a bridge, sometimes as a barrier, Istanbul for more than 2,500 years has stood between conflicting surges of religion, culture, and imperial power. For most of those years it was one of the most coveted cities in the world.",
+        "place": "Nagarkot",
+        "country": "Nepal",
+        "thumb": "https://img.traveltriangle.com/blog/wp-content/uploads/2015/10/nagarkot-Beautiful-view-of-the-Himalayas-from-Nagarkot.jpg",
+        "star": 3.1,
+        "starCount": 110,
+        "cost": "8 days"
+    },
+    {
+        "id": 9,
+        "title": "Garden Holds Colors",
+        "description": "The old walled city of Istanbul stands on a triangular peninsula between Europe and Asia. Sometimes as a bridge, sometimes as a barrier, Istanbul for more than 2,500 years has stood between conflicting surges of religion, culture, and imperial power.",
+        "place": "Indira Gandhi Memorial Tulip garden",
+        "country": "Jammu and Kashmir",
+        "thumb": "http://www.lovethesepics.com/wp-content/uploads/2013/05/Seabird-Island-tulip-fields.jpg",
+        "star": 3.5,
+        "starCount": 1410,
+        "cost": "10 days"
+    }
+    
+    
+]

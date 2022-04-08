@@ -1,0 +1,28 @@
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fffffe;
+}
+
+p {
+  color: #a7a9be;
+}
+
+.primary-btn {
+  background-color: #ff8906;
+  color: #fffffe;
+  transition: 0.3s;
+}
+
+.secondary-btn {
+  background-color: #e53170;
+  color: #fffffe;
+  transition: 0.3s;
+}

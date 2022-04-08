@@ -1,0 +1,22 @@
+.single-skill {
+    background-color: #ff8b0628;
+    padding: 16px 0;
+    width: 160px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.single-skill img {
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.single-skill:hover img {
+    transform: rotateY(360deg);
+}
+
+.single-skill:hover {
+    background-color: rgb(0, 0, 0);
+    transform: scale(1.2);
+}

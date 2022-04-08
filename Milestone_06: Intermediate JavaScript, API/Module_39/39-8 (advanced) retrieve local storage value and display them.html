@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Shopping</h1>
+    <input type="text" id="product-name">
+    <button onclick="addItem()">Add Item</button>
+    <br>
+    <ul id="products">
+
+    </ul>
+    <br><br>
+    <button onclick="placeOrder()">Place Order</button>
+
+
+
+
+
+
+
+
+    <script>
+
+        const displayLoacalStorageCard = () => {
+
+            const card = getCard();
+
+            document.getElementById('products').textContent = "";
+            for (const product in card) {
+                displayProduct(product);
+            }
+
+
+        }
+
+        const addItem = () => {
+            const productName = document.getElementById('product-name');
+
+            const name = productName.value;
+
+            if (!name) return;
+
+            // add local storage
+            addProductToCard(name);
+
+            // display to the ui
+            // displayProduct(name);
+
+            displayLoacalStorageCard();
+
+
+            productName.value = "";
+        }
+
+
+
+        const displayProduct = name => {
+            const ul = document.getElementById('products');
+
+            const li = document.createElement("li");
+            li.innerText = name;
+
+            ul.appendChild(li);
+        }
+
+
+
+
+        const getCard = () => {
+            const haveCard = localStorage.getItem('card');
+            let cardObj;
+            if (haveCard) {
+                cardObj = JSON.parse(haveCard);
+            }
+            else {
+                cardObj = {};
+
+            }
+            return cardObj;
+        }
+
+        const addProductToCard = name => {
+
+            const card = getCard();
+
+            if (card[name]) card[name]++;
+            else
+                card[name] = 1;
+
+            const stringfiCard = JSON.stringify(card);
+
+            localStorage.setItem('card', stringfiCard);
+
+        }
+
+
+        displayLoacalStorageCard();
+
+
+        const placeOrder = () => {
+            document.getElementById('products').textContent = "";
+
+            localStorage.removeItem('card');
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

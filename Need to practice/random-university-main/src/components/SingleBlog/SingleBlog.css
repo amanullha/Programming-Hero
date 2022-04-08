@@ -1,0 +1,10 @@
+.blog-btn {
+    border: none;
+    color: #e16162;
+    font-size: 30px;
+    background: none;
+}
+
+.fa-heart:hover {
+    font-weight: 700;
+}

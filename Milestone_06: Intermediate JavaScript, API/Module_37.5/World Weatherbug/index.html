@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>World Weatherbug</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- link to external css -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="d-flex justify-content-center ">
+        <img class="logo " src="images/logo.png" alt="" srcset="">
+    </header>
+
+    <div class="container mx-auto">
+
+        <div class="weather-status text-white text-center mt-3">
+
+            <img id="weather-icon" src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+            <h2 id="weather-condition">Weather conditon</h2>
+            <h4 id="weather-description">weather description</h4>
+            <h4 id="city-name-head">City</h4>
+
+        </div>
+
+
+        <form class="col-md-6 m-auto py-4">
+
+            <div class="input-group  pl-3 d-flex justify-content-between">
+
+                <input id="searchId" type="text" class="form-control-p ml-3"
+                    placeholder="Enter a location for Weather ...">
+
+                <button type="button" onclick="searchTemperature()" class="btn  px-4">Search</button>
+
+            </div>
+
+            <h4 id="loading" class=" text-center text-success mt-2">Loading...</h4>
+
+        </form>
+
+        <div id="warning" class="warning text-danger text-center">Please Enter a valid City Name</div>
+
+        <section
+            class="temperature-show d-flex flex-lg-row flex-md-row flex-sm-column flex-column algin-i text-white mx-5 ">
+
+            <div
+                class="left p-5  justify-content-between  d-flex flex-lg-row flex-md-row flex-sm-column flex-column">
+
+                <div class="mr-3">
+                    <h1 id="weather-temp">32</h1>
+                    <sub class="d-flex mx-3 ">
+                        <h4 id="C" onclick="convertTemp(true)">°C</h4>
+                        <h4 class="mx-1"> | </h4>
+                        <h4 id="F" onclick=convertTemp(false)> °F</h4>
+                    </sub>
+                </div>
+
+                <div class="farenhite border-left pl-2">
+                    <div class="d-flex">
+                        <h3>Precipitation:&nbsp</h3>
+                        <h3 id="precipitation">0</h3>
+                        <h3>&nbsp%</h3>
+                    </div>
+                    <div class="d-flex">
+                        <h3>Humidity:&nbsp</h3>
+                        <h3 id="humidity">0</h3>
+                        <h3>&nbsp%</h3>
+                    </div>
+                    <div class="d-flex">
+                        <h3>Wind Deg:&nbsp</h3>
+                        <h3 id="wind-deg">0</h3>
+                        <h3>&deg; </h3>
+                    </div>
+                    <div class="d-flex">
+                        <h3>Wind Speed:&nbsp</h3>
+                        <h3 id="wind-speed">0</h3>
+                        <h3>&nbsp m/s</h3>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="right text-white shadow-lg p-5 rounded-pill ">
+                <h2 id="continent">continent</h2>
+                <h3 id="country-name">countryName</h3>
+                <h3 id="Subdivision">principalSubdivision</h3>
+                <h3 id="date"></h3>
+                <h3 id="city-name" class="text-warning">Asia</h3>
+            </div>
+        </section>
+
+
+
+
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+
+.image-slider-section{
+    margin-top: 100px !important;
+    
+}
+ .carousel{
+    background-color:#FEEAE9;
+    border-radius: 10px;
+}
+
+/* categories css start  */
+
+
+.categories-1{
+    border-radius: 30px;
+     background-image: linear-gradient(#ffa431, #ffc61f);
+     
+}
+
+.categories-2{
+    border-radius: 30px;
+     background-image: linear-gradient(#ff5599, #ff1872);
+}
+
+.categories-3{
+    border-radius: 30px;
+    background-image: linear-gradient(#4164FD, #3f10f8);
+
+}
+ .categories-1 img,.categories-2 img ,.categories-3 img{
+    width: 100px;
+}
+
+
+/* categories css end  */
+
+/* shoes css start  */
+.card{
+    border: none;
+}
+.card-footer{
+    border: none;
+    background-color: transparent !important;
+}
+
+/* shoes css end */
+
+
+
+
+
+
+
+
+

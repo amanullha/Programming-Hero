@@ -1,0 +1,311 @@
+/* link to Source Serif Pro (google font) */
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap');
+
+
+body{
+    font-family: 'Source Serif Pro', serif;
+} */
+
+/* header section  */
+
+header img:hover{
+ cursor: pointer;
+}
+
+
+/* search box css start  */
+
+        .search-box {
+            border-radius: 30px 30px 30px 30px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        .search-input {
+            border-radius: 30px 0px 0px 30px;
+            border: none;
+
+        }
+        .search-btn {
+            border-radius: 0px 30px 30px 0px;
+            border: none;
+            background-color: #047857;
+            color: whitesmoke;
+        }
+
+        .search-btn:active {
+            color: rgb(231, 186, 102) !important;
+            border-radius: 0px 30px 30px 0px !important;
+        }
+        button:focus,
+        input:focus {
+
+            outline-offset: 0px;
+            outline: none;
+        }
+       .search-box input:focus {
+            border: 1px solid rgb(8, 112, 5);
+            
+        }
+     
+       
+
+/* search box css ends */
+
+/* spinner css start  */
+
+
+.spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+          animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+/* spinner css ends */
+
+
+/* phone css start  */
+.phone{
+
+}
+.card{
+  
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  transition: transform ease-in-out .5s;
+  border-radius: 30px;
+  
+}
+.card:hover .card-img-top{
+  
+  height: 60% !important;
+  width: 60% !important;
+}
+
+.list-group-display{
+  display: none !important;
+}
+.card:hover .list-group-display{
+  display: block !important;
+}
+
+.card-end-body{
+  display: none !important;
+}
+.card:hover .card-end-body{
+  display: block !important;
+} 
+
+.card{
+   border: none !important;
+  /* background-color: transparent !important;  */
+
+  background-color: #f4f4f4 !important;
+  padding: 20px 20px !important;
+  border-radius: 30px !important;
+
+
+}
+.add-card-btn{
+  border-radius: 30px !important;
+background: linear-gradient(0deg, rgba(195, 34, 195, 0.219) 0%, rgba(253,187,45,0.6671043417366946) 100%);
+font-size: larger !important;
+font-weight: bold !important;
+color: #181713 !important;
+border: none !important;
+outline: none !important;
+}
+.add-card-btn:hover{
+
+  color: #9b0d06 !important;
+}
+
+.list-group-item{
+  background-color: transparent !important;
+}
+.card-img-top img{
+  border-radius: 30px;
+}
+.phone-review-link {
+
+  text-decoration: none;
+  color: rgb(17, 4, 59);
+  background-color: #5995f748;
+  padding: 2px 17px;
+  border-radius: 20px 2px !important;
+}
+
+/* phone css ends */
+
+
+.details-btn{
+  border-radius: 20px 5px !important;
+}
+
+/* modal css start  */
+
+.modal-content{
+  border-radius: 30px !important;
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.6671043417366946) 100%);
+}
+.modal-header{
+  border-bottom: none !important;
+}
+.card-modal{
+   border: none !important;
+  padding: 0px 0px !important;
+  border-radius: 30px !important;
+}
+
+
+.card-modal .card-img-top img{
+  /* width: 45% !important; */
+  max-height: 60vh !important;
+}
+.des-title{
+   margin-left: 5px;
+border-left: 8px solid;
+    border-image: linear-gradient(rgb(6, 238, 56),rgb(235, 14, 235)) 0 100%;
+
+}
+.release-icon{
+  width: 30px;
+  height: 30px;
+}
+
+.des-title h2{
+
+  font-size: 3em;
+}
+
+.des-features{
+  color: whitesmoke;
+  
+  background-color: rgba(82, 80, 77, 0.363);
+  border-radius: 25px;
+}
+.des-features li{
+  padding: 2px;
+}
+
+
+/* modal css ends */
+
+
+/* show more setion start  */
+
+
+#show-more-btn{
+  border-radius: 40px !important;
+  background-color: rgba(169, 169, 169, 0.404);
+  color: #836304;
+ 
+}
+#show-more-btn:hover{
+  background-color: rgba(223, 217, 217, 0.404);
+  color: #5c4500;
+}
+#show-more-btn:active{
+  background-color: rgba(240, 95, 95, 0.404);
+  color: #0d0ad8;
+}
+.more-phones{
+  display: none;
+}
+/* show more setion ends */

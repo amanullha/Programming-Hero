@@ -1,0 +1,20 @@
+.img-cont {
+    overflow: hidden;
+}
+
+.img-cont img {
+    transition: transform .5s ease;
+}
+
+.img-cont img:hover {
+    transform: scale(1.5);
+}
+
+.fa-star {
+    color: #ffb23d;
+}
+
+.fa-user {
+    font-size: 30px;
+    font-weight: 500;
+}

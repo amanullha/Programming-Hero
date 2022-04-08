@@ -1,0 +1,46 @@
+
+.books-container{
+    margin: 20px 20px;
+}
+.book-list-container
+{
+    position: relative;
+    display: grid;
+    grid-template-columns:3fr 1fr;
+    grid-gap:10px;
+}
+.books-list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:15px;
+}
+
+@media screen and (max-width:1600px) {
+    .books-list{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .books-list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:600px) {
+    .books-list{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .book-list-container
+    {
+    grid-template-columns:1fr 1fr;
+   
+    }
+}
+.cart-details{
+    background-color:rgba(211, 21, 21, 0.082);
+    border-radius: 30px;
+    position: relative;
+    padding: 20px 15px;
+
+}

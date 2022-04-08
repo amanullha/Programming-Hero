@@ -1,0 +1,60 @@
+1. demo website design 
+
+		A. Themeforest.net
+		B. dribble.com
+		C. figma
+		D. 
+		
+2. free icon and photo
+	
+		A. freepik.com
+		B. flaticon.com
+		C. icon8.com
+		D. unsplash.com(for image)
+		E. awwwards.com(for image)
+		F. 
+		G. 
+		H. 
+		
+3. use Figma for make a design and see.
+
+
+
+# Have to Learn
+	
+	1. CSS Transform 
+	2. CSS Transition
+	3. CSS Position
+	4. CSS Animation
+	5. Advanced selector in CSS
+    6. BEM CSS
+    7. CSS style gide line
+
+
+4. Delete initial git file from folder in desktop. 
+
+	it happend when we clone a private repo . because in the private rep alrady have a git init file. because git init file created by the creator of the main file.  
+
+	command: rm -rf .git
+
+
+
+
+
+
+
+
+
+
+Qsn:
+
+	Importants Note: 
+	1. we use "Offcanvas" to create a side menu. 
+	2. Tailwind link : <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+
+	. জাভাস্ক্রিপ্ট এর কোড কিভাবে ব্রাউজারের মধ্যে রান করে। দরকার হলে গুগল বা ইউটিউবে সার্চ দিয়ে একটু ভালো করে দেখে রাখো। 
+
+৭. জাভাস্ক্রিপ্ট এর কোন কোন জিনিস asynchronous সেটার একটা লিষ্ট গুগলে সার্চ দিয়ে বের করে ফেলো। এবং এই asynchronous বলতে কি বুঝায় সেটাও দেখে রাখো। 
+
+৮. event loop লুপ কি জিনিস। এই রিলেটেড পুরা জিনিসটা আজকে অনেকেই বুঝবে না। তাও আরেকবার দেখে রাখবে। 

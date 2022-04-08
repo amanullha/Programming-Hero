@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.7.0/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+
+
+    <title>34-5 Explore meal db api and create dynamic url to load meals
+    </title>
+
+    <style>
+        .logo {
+            width: 200px;
+            height: 150px;
+        }
+
+        .logo-pic {
+            width: 100%;
+        }
+
+        .search {
+
+            border-radius: 20px 20px 20px 20px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+        }
+
+
+
+        .search-input {
+            border-radius: 20px 0px 0px 20px;
+
+
+        }
+
+        .search-btn {
+            border-radius: 0px 20px 20px 0px;
+        }
+
+        .search-btn:active {
+            color: rgb(231, 186, 102) !important;
+            border-radius: 0px 20px 20px 0px !important;
+
+
+        }
+
+        button:focus,
+
+        input:focus {
+
+            outline-offset: 0px;
+            outline: none;
+        }
+
+
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <header class="mt-10 flex flex-col  items-center">
+        <div class="logo relative ">
+            <img class="logo-pic" src="logo.png" alt="" srcset="">
+        </div>
+        <div class="restaurant-name flex flex-row justify-center items-center">
+            <span class="font-extrabold italic text-6xl  text-yellow-700 tracking-widest  ">Food</span>
+
+
+            <span class="flex flex-col ml-5">
+                <span class="font-bold text-green-900 italic text-4xl">Plant</span>
+                <span class="text-2xl text-yellow-600 tracking-widest ">Restaurant</span>
+            </span>
+
+
+        </div>
+
+    </header>
+
+    <main class="m-5">
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+
+                <div id="details-container" class="details-container ">
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <section class="search-box flex flex-col justify-center items-center">
+            <div class="search ">
+
+                <input id="search-input" class="search-input px-5 py-2" type="text" placeholder="Search your foods 🥞">
+
+                <button id="search-btn" class="search-btn bg-green-700 px-5 py-2 text-white ">Search</button>
+            </div>
+            <div class="search-count py-5 px-3">
+                <h3 id="item-alert" class="relative"></h3>
+            </div>
+
+
+
+            <!-- spinner  -->
+            <div id="spinner" class="hidden">
+                <div style="border-top-color:transparent"
+                    class="w-16 h-16 border-4 border-blue-400 border-dashed rounded-full animate-spin"></div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <section class="searched-foods">
+
+            <div id="food-items" class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  gap-4  mx-auto ">
+
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+    <script>
+
+
+
+        const searchButton = document.getElementById('search-btn');
+        const searchInput = document.getElementById('search-input');
+
+        const itemAlert = document.getElementById('item-alert');
+
+
+        const foodItems = document.getElementById('food-items');
+
+        let searchTextCopy = "";
+        searchButton.addEventListener('click', function () {
+
+            const searchText = searchInput.value;
+            if (searchText.length <= 0) {
+                //spinner hide
+                spinnerControl("block", "hidden");
+
+                itemAlert.innerText = "😝 Please write something to search"
+                itemAlert.style.color = 'red';
+            }
+            else {
+
+
+
+                // Spinner show
+
+                spinnerControl("hidden", "block");
+
+                // remove all the child previous
+                // removeAllChildNodes(foodItems);
+                foodItems.innerHTML = "";
+
+
+                itemAlert.innerText = "";
+                itemAlert.style.color = 'black';
+
+                searchTextCopy = searchInput.value;
+
+                searching();
+            }
+        })
+
+
+        function spinnerControl(remove, add) {
+            const spinner = document.getElementById("spinner");
+            spinner.classList.remove(remove);
+            spinner.classList.add(add);
+        }
+
+
+
+        const searching = async () => {
+
+            const searchText = searchInput.value;
+            searchInput.value = "";
+
+            const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+
+            // console.log(url);
+            // fetch data
+
+            // fetch(url).then(response => response.json()).then(data => searchResult(data.meals))
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                // console.log('res ' + response);
+                // console.log('\ndata ' + data.meals);
+
+
+
+                if (data.meals == null || data.meals.length == 0) {
+                    //spinner hide
+                    spinnerControl("block", "hidden");
+                    itemAlert.innerText = "Meals are not available 🕶";
+                    itemAlert.style.color = 'red';
+                }
+                else {
+                    itemAlert.innerText = `${data.meals.length} items are founded for "${searchTextCopy}" 😃`;
+                    itemAlert.style.color = 'green';
+
+                    searchResult(data.meals)
+
+                }
+            } catch (error) {
+                itemAlert.innerText = error;
+                itemAlert.style.color = 'red';
+            }
+
+
+
+        }
+
+        const searchResult = meals => {
+
+            //spinner hide
+            spinnerControl("block", "hidden");
+
+
+            for (meal of meals) {
+                // console.log(meal);
+                addMealItem(meal);
+
+            }
+
+        }
+
+        const addMealItem = meal => {
+
+
+            const mealImage = meal.strMealThumb;
+            const mealName = meal.strMeal;
+            const mealDescription = meal.strInstructions;
+            const mealId = meal.idMeal;
+
+            // create div(card)
+            const div = document.createElement('div');
+
+            /*
+            <div id="item"
+                    class="relative w-full  rounded overflow-hidden shadow-lg   flex flex-col bg-blue-200">
+            */
+
+            // add class
+            div.classList.add('relative');
+            div.classList.add('w-full');
+            div.classList.add('rounded');
+            div.classList.add('overflow-hidden');
+            div.classList.add('shadow-lg');
+            div.classList.add('flex');
+            div.classList.add('flex-col');
+            div.classList.add('bg-blue-200');
+
+            // add id
+            div.id = "item";
+
+
+            // add properties to div(card)
+
+            div.innerHTML = `
+
+                    <img class="w-full" src="${mealImage}" alt="Sunset in the mountains">
+
+                    <div class="px-6 py-4 h-full">
+
+                        <div class="font-bold text-xl mb-2">${mealName}</div>
+
+                        <p class="text-gray-700 text-base">
+                            ${mealDescription.slice(0, 200)}
+                        </p>
+
+                    </div>
+
+
+
+                   <button onclick="loadMealDetails(${mealId})"
+                                class="myBtn modal-open  w-full bg-blue-300 hover:bg-blue-400  text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center justify-center items-center">
+        
+                                <img onclick="loadMealDetails(${mealId})" style="width: 30px;" class=" mr-3"
+                                    src="https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-detail-engine-spare-parts-flat-icons-inmotus-design-2.png" />
+        
+                                <span onclick="loadMealDetails(${mealId})">
+                                    Details
+                                </span>
+        
+                            </button>
+        
+        
+                    
+`;
+            // add new item to foodList / foodItems
+
+            foodItems.appendChild(div);
+
+        }
+
+
+
+        // function removeAllChildNodes(parent) {
+        //     while (parent.firstChild) {
+        //         parent.removeChild(parent.firstChild);
+        //     }
+        // }
+
+        // meals details show
+
+
+        const loadMealDetails = async mealId => {
+
+            // modal.style.display = "block";
+
+            const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
+
+            try {
+                const respons = await fetch(url);
+                const data = await respons.json();
+
+                showMealDetails(data.meals[0]);
+            } catch (error) {
+                console.log(error);
+            }
+
+            // fetch(url).then(response => response.json()).then(data => showMealDetails(data.meals[0]))
+        }
+
+
+
+        const showMealDetails = meal => {
+            // console.log(meal);
+
+            modal.style.display = "block";
+
+
+            const mealImage = meal.strMealThumb;
+            const mealName = meal.strMeal;
+            const mealDescription = meal.strInstructions;
+            const mealId = meal.idMeal;
+            const mealSource = meal.strSource;
+            const mealTag = meal.strTags;
+            const mealYoutube = meal.strYoutube;
+
+
+            // let mealTags = mealTag.split(",");
+            // console.log(mealTags);
+
+            // const tags = document.createElement('div');
+
+            // tags.classList.add("px-6");
+            // tags.classList.add("pt-4");
+            // tags.classList.add("pb-2");
+
+
+            // mealTags.forEach(element => {
+
+            //     tags = tags + `
+
+            //          <span
+            //                         class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#${element}</span>
+
+            //         `;
+            // });
+
+
+
+
+
+
+
+
+
+
+            const mealDetails = document.getElementById('details-container');
+
+            const div = document.createElement('div');
+            div.id = "details";
+
+            div.classList.add("flex");
+            div.classList.add("justify-center");
+            div.classList.add("items-center");
+            div.classList.add("w-full");
+            div.classList.add("h-full");
+
+            div.classList.add("flex-col");
+            div.classList.add("sm\:flex-row")
+            div.innerHTML = `
+            
+                        <img class="w-2/4 h-2/4 mr-5" src="${mealImage}" alt="Sunset in the mountains">
+
+
+
+                        <div class=" ml-5 max-w-sm  overflow-hidden ">
+
+                            <div class="px-6 py-4">
+                                <div class="font-bold text-xl mb-2">${mealName}</div>
+                                <p class="text-gray-700 text-base">
+                                   ${mealDescription}
+                                </p>
+                            </div>
+
+                            <div class="px-6 pt-4 pb-2">
+                                <a class="mr-5 mb-5 inline-block bg-blue-300 px-5 py-1 rounded-3xl" href=" ${mealSource}" target="__blank">Source</a>
+                                <a class="inline-block bg-blue-300 px-5 py-1 rounded-3xl" href="${mealYoutube}" target="__blank">Live</a>
+                            </div>
+                            <div class="px-6 pt-4 pb-2">
+                                        <span
+                                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                                        <span
+                                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                                        <span
+                                            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+                                    </div>
+                            
+                        </div>
+                    
+            
+            `;
+
+            mealDetails.innerHTML = "";
+            mealDetails.appendChild(div);
+
+        }
+
+        /*
+        
+       
+        
+        */
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementsByClassName("myBtn");
+        console.log(btn);
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+
+
+
+        // When the user clicks the button, open the modal 
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

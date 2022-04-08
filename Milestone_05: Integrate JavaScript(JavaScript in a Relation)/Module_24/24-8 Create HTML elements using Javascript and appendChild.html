@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <section class="blogs">
+            <ul id="blog-list">
+                <li> Blog 1</li>
+                <li> Blog 2</li>
+                <li> Blog 3</li>
+                <li> Blog 4</li>
+            </ul>
+        </section>
+    </div>
+    <script>
+
+
+        // create elements
+
+        const li = document.createElement('li');
+        li.innerText = "added blog by javascript";
+
+        // where to add
+
+        const ul = document.getElementById('blog-list');
+        ul.append(li);
+        // append new element into ul as child
+
+
+
+        // add section
+        const section = document.createElement('section');
+        const article = document.createElement('article');
+        const h3 = document.createElement('h3');
+        const p = document.createElement('p');
+
+        h3.innerText = "this h3 added by javascript";
+        p.innerText = "Magna consetetur labore diam eirmod diam eos labore voluptua at, et et ea consetetur accusam sed kasd amet ut sed,.a;lkdafasdkjfadkfjajksdhfgkasdhdf";
+
+        
+        article.innerHTML = `<h1>added by innerHTML</h1>`;
+        article.append(h3);
+        article.append(p);
+
+        section.append(article);
+        section.style.backgroundColor = 'green';
+        section.style.padding = "20px 50px";
+
+
+
+        const container = document.getElementById('container');
+
+        section.classList.add("blog");
+        container.append(section);
+
+
+
+    </script>
+</body>
+
+</html>

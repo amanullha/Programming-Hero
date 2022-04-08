@@ -1,0 +1,102 @@
+<!-- 
+
+    1. Bootstrap is a pre-define class. here already css are written. if you want to use it then just write the name of the class as tag class name after adding the Bootstrap connection next line of the title. 
+
+    p-3   = padding:3px;
+    mb-2  = margin-button:2px; 
+
+    text-white = color:white;
+    bg-primary = background-color: primary;
+    bg-gradient = background-color-gradient:rgb(x,y,z,g)
+
+    bg-opacity-50 = background-color-opacity: 50%;
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link CND for bootstrap-5""> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="p-3 mb-2 bg-primary ">.bg-primary = Background color is primary </div>
+    <div class="p-3 mb-2 bg-black text-white">.bg-primary = Background color is primary </div>
+    <div class="p-3 mb-2 bg-danger ">.bg-primary = Background color is primary </div>
+    <br><br>
+    <div class="p-3 mb-2 bg-primary bg-gradient ">.bg-primary = Background color is primary </div>
+    <div class="p-3 mb-2 bg-black bg-gradient text-white ">.bg-primary = Background color is primary </div>
+    <div class="p-3 mb-2 bg-danger bg-gradient">.bg-primary = Background color is primary </div>
+    <br><br>
+    <div class="p-3 mb-2 bg-primary bg-gradient bg-opacity-10">.bg-primary = Background color is primary </div>
+    <div class="p-3 mb-2 bg-black bg-gradient text-white bg-opacity-50">.bg-primary = Background color is primary </div>
+    <div class="p-3 mb-2 bg-danger bg-gradient bg-opacity-75">.bg-primary = Background color is primary </div>
+
+    <br><br>
+    <div class="p-3 mt-0 bg-danger bg-warning bg-opacity-10"> opacity</div>
+    <div class="p-3 mt-0 bg-danger bg-warning bg-opacity-25"> opacity</div>
+    <div class="p-3 mt-0 bg-danger bg-warning bg-opacity-50"> opacity</div>
+    <div class="p-3 mt-0 bg-danger bg-warning bg-opacity-75"> opacity</div>
+    <div class="p-3 mt-0 bg-danger bg-warning bg-opacity-100"> opacity</div>
+    <br><br>
+    <div class="p-3 mt-0  bg-success bg-opacity-10"> opacity</div>
+    <div class="p-3 mt-0  bg-success bg-opacity-25"> opacity</div>
+    <div class="p-3 mt-0  bg-success bg-opacity-50"> opacity</div>
+    <div class="p-3 mt-0  bg-success bg-opacity-75"> opacity</div>
+    <div class="p-3 mt-0  bg-success bg-opacity-100"> opacity</div>
+
+    <br><br><br>
+
+    <div class="p-4 m-5 border">border</div>
+    <div class="p-4 m-5 border-bottom">border</div>
+    <div class="p-4 m-5 border-top">border</div>
+    <div class="p-4 m-5 border-start">border</div>
+    <div class="p-4 m-5 border-end">border</div>
+    <div class="p-4 m-5 border border-danger">border</div>
+    <div class="p-4 m-5 border border-success">border</div>
+    <br><br><br>
+
+    <div class="p-3 m-2 bg-success border border-5 border-warning rounded-pill">border</div>
+    <br><br><br>
+
+
+
+
+    <div class="p-2 m-2 text-warning bg-success">text color</div>
+    <div class="p-2 m-2 text-success bg-white border border-4 border-dark">text color</div>
+    <p class="text-white-50 bg-dark">.text-white-50</p>
+
+    <br><br><br>
+    <div class="text-primary">This is default primary text</div>
+    <div class="text-primary text-opacity-75">This is 75% opacity primary text</div>
+    <div class="text-primary text-opacity-50">This is 50% opacity primary text</div>
+    <div class="text-primary text-opacity-25">This is 25% opacity primary text</div>
+
+    <br><br><br>
+
+    <span class=" d-block bg-primary p-5 m-5">display</span>
+    <span class=" d-inline-flex bg-primary p-5 m-5">display</span>
+    <span class=" overflow-hidden d-flex bg-primary p-5 m-5">display</span>
+    <span class="  d-inline bg-primary p-5 m-5">display</span>
+    <br><br><br>
+
+
+    <div class="position-relative">
+        <div class="position-absolute top-0 start-0">1</div>
+        <div class="position-absolute top-0 end-0">2</div>
+        <div class="position-absolute top-50 start-50">3</div>
+        <div class="position-absolute bottom-50 end-50">4</div>
+        <div class="position-absolute bottom-0 start-0">5</div>
+        <div class="position-absolute bottom-0 end-0">6</div>
+    </div>
+</body>
+
+</html>

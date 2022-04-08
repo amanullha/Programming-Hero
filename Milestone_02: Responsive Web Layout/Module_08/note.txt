@@ -1,0 +1,6 @@
+Importent video: 
+   1. Module_8-4 CSS Grid layout template columns grid gap
+
+   2. Module_8-7 Create a Photo Album using relative position and flexbox
+
+   3. CSS properties (search google and learn )

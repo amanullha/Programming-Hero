@@ -1,0 +1,113 @@
+<!-- 
+1. Text Align. text align use to decorate the text,like text can set in center,left right or margin the text both left and right site. 
+
+text-align:center;  -> text come on center
+text-align:justify; -> text marge from both left and right side.
+text-align:initial; -> Sets this property to its default value. Read about initial
+text-align:inherit; -> Inherits this property from its parent element. Read about inherit
+
+
+ -->
+<!-- 
+2. Font Family. font family used to change the text font. 
+
+
+  -->
+
+
+<!-- 
+3. Inline. some tag are stay in same line and some are next line or Block element. 
+
+    inline tag's are: <same><a>
+    Block element or  next line tag's are: <div><li>
+
+inline vs block element?
+   -->
+<!-- 
+    Inline: inline means same line. 
+    Block: block means one element in a row. The next element in next row. 
+
+    Inline tag's: <a><abbr><acronym><b><bdo><big><br><button><cite><code><dfn><em><i><img><input><kbd><label><map><object><output><q><samp><script><select><small><span><strong><sub><sup><textarea><time><tt><var>
+
+    Block tag's: <address><article><aside><blockquote><canvas><dd><div><dl><dt><fieldset><figcaption><figure><footer><form><h1>-<h6><header><hr><li><main><nav><noscript><ol><p><pre><section><table><tfoot><ul><video>
+
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blogContainer {
+            background-color: rgb(229, 193, 145);
+            border: 20px solid yellow;
+            border-radius: 10px;
+            margin: 20px 40px 50px;
+
+            padding: 20px;
+            /* padding: 20px 10px;  */
+            /* padding: 20px 22px 50px; */
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        .authorName {
+            color: red;
+        }
+
+        /* align blog title text  */
+        .blog-title {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 700;
+        }
+
+        .blogContainer p {
+
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to my programming Blog</h1>
+
+    <div class="blogContainer">
+        <h3 class="blog-title">Block title in the top part</h3>
+        <small>Author: <span class="authorName">Aman Ullha 1</span></small>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga Tuled nym
+            fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>another palappppp<span>asdlkfsdfsdfj</span><a href="htpps://www.w3school.com">gisit goola </a>
+        <p>as;ldkfsdfjskldfj</p>
+
+    </div>
+
+    <div class="blogContainer">
+        <h3 class="blog-title">Block title in the top part</h3>
+
+        <small>Author: <span class="authorName">Aman Ullha 2</span></small>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+
+    </div>
+
+    <div class="blogContainer">
+        <h3 class="blog-title">Block title in the top part</h3>
+
+        <small>Author: <span class="authorName">Aman Ullha 3</span></small>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+        <p>Tuled nym fyodumtul yg keseruen bel halal thez niha ullyetuk, walasth ygoz hioll eggedum uiraga..</p>
+
+    </div>
+
+</body>
+
+</html>

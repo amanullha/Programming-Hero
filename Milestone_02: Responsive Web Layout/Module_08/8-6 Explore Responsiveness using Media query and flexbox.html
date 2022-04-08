@@ -1,0 +1,186 @@
+<!-- 
+
+    1.  flex-wrap: wrap; Vs @media screen{}
+
+    2. Media query
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {...}
+
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {...}
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {...}
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {...}
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {...}
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-6 Explore Responsiveness using Media query and flexbox
+    </title>
+    <style>
+        .menu-container {
+            background-color: aqua;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+
+        }
+
+        .food {
+            background-color: bisque;
+            border: 5px solid green;
+            border-radius: 10px;
+            padding: 10px;
+            width: 30%;
+            /* width: 10px; */
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+        }
+
+        .food img {
+            width: 95%;
+        }
+
+        .food p {
+            width: 95%;
+            text-align: justify;
+        }
+
+        /* Extra small devices (phones, 600px and down) */
+        /* @media only screen and (max-width: 600px) {
+            .menu-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-container">
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:100</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:102</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:103</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:104</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:105</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:106</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:107</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:108</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:109</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+        <div class="food">
+            <img src="images/chicken.jpg" alt="">
+            <h2>Price:110</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium optio maiores, voluptatum
+                distinctio voluptate corporis provident, possimus a, nulla incidunt illum! Eos expedita laborum fugiat
+                ut perspiciatis in suscipit nisi vitae nemo excepturi earum rerum, consequatur soluta, voluptatibus
+                saepe sequi harum? Quisquam est aliquam iste esse magnam animi dolore quibusdam.
+            </p>
+            <button>Order Now</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

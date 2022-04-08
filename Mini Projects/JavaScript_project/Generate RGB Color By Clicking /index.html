@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate RGB Color By Clicking</title>
+    <style>
+        .main-div {
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 50%;
+            padding: 30px 50px;
+            background-color: rgba(0, 0, 0, 0.657);
+            color: rgb(233, 182, 17);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .main-div h1 {}
+
+        .main-div button {
+
+            padding: 20px 60px;
+            font-weight: 900;
+            font-size: xx-large;
+            border: none;
+            border-radius: 20px;
+        }
+
+        .main-div button:hover {
+
+            background-color: rgba(224, 72, 72, 0.609);
+            color: rgb(240, 216, 186);
+        }
+
+        .main-div button:active {
+
+            background-color: rgba(151, 6, 6, 0.835);
+            color: rgb(241, 236, 229);
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="main-div">
+        <h1> Click the button to change the body background color!!</h1>
+        <button id="btn">Click Color</button>
+    </div>
+
+    <script>
+
+        const generateBackgroundColor = () => {
+
+            const R = Math.floor(Math.random() * 255);
+            const G = Math.floor(Math.random() * 255);
+            const B = Math.floor(Math.random() * 255);
+            const opacity = (parseFloat(Math.random())) % 0.99;
+
+            return `rgba(${R},${G},${B},${opacity})`;
+
+        }
+
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+
+
+            document.getElementById('body').style.backgroundColor = generateBackgroundColor();
+
+        })
+    </script>
+</body>
+
+</html>

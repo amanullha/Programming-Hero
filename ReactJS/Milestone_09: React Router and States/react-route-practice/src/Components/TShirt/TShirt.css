@@ -1,0 +1,29 @@
+.tshirt-container{
+
+        border: 1px solid black;
+        border-radius: 15px;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+
+}
+img{
+        height: 150px;
+}
+button{
+        width: 100%;
+        border: none;
+        background-color: rgb(48, 48, 236);
+        color: rgb(246, 160, 46);
+        border-radius: 30px;
+        outline: none;
+      
+
+}
+button:hover{
+        background-color: rgb(62, 62, 240);
+}
+button:active{
+        background-color: rgba(248, 80, 50, 0.486);
+        color: black;
+}

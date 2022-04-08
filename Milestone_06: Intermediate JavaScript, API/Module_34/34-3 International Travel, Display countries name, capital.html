@@ -1,0 +1,125 @@
+<!-- 
+using rest countries api
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.7.0/tailwind.min.css">
+
+    <title>countries api fetch</title>
+    <style>
+        .country {
+            position: relative;
+            text-align: center;
+
+            background-color: rgba(139, 105, 105, 0.315);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding-bottom: 3px;
+            margin: 2px;
+            color: rgb(98, 6, 94);
+        }
+
+        #flag {
+            font-size: 1000%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="m-5">Countries API</h1>
+    <button class="border-2 px-5 py-2 font-extrabold bg-blue-300 m-5" id="load-countries">Load Countreis</button>
+
+    <div id="countries" class="grid lg:grid-cols-5 md:grid-cols-4  sm:grid-cols-3 grid-cols-1 gap-3 m-3">
+
+        <!-- <div id="country" class="country">
+
+            <div id="flag">🇦🇫</div>
+            <h1>Country Name</h1>
+            <h2>Capital Name</h2>
+            <h3>language</h3>
+            <h3>region</h3>
+
+
+        </div> -->
+
+    </div>
+
+
+
+    <script>
+
+        const loadCountries = () => {
+            fetch('https://restcountries.com/v3.1/all').then(respons => respons.json()).then(data => loadAllCountries(data))
+        };
+
+        const loadAllCountries = countries => {
+
+            countries.forEach(country => {
+
+                console.log(country);
+
+                const countryName = country.name.common;
+                const countryCapital = country.capital;
+                const countryRegion = country.region;
+
+
+
+
+                const countryFlag = country.flag;
+
+
+                const div = document.createElement('div');
+                div.classList.add('country');
+                div.id = "country";
+
+                div.innerHTML = `
+
+                    <div id="flag">${countryFlag}</div>
+                    <h1>${countryName}</h1>
+                    <h2>${countryCapital}</h2>
+                    
+                    <h3>${countryRegion}</h3>
+                    
+                `;
+
+
+                document.getElementById('countries').appendChild(div);
+
+            });
+
+        }
+
+
+
+        const loadButton = document.getElementById('load-countries');
+
+        loadButton.addEventListener('click', function
+            () {
+            loadCountries()
+        })
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

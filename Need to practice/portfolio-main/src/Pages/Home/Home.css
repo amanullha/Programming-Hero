@@ -1,0 +1,104 @@
+body,
+html {
+
+    height: 100%;
+}
+
+.page-bg {
+    background-image: url('../../image/background.jpg');
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fffffe;
+}
+
+p {
+    color: #a7a9be;
+}
+
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 2px 2px 4px gray;
+}
+
+.primary-btn {
+    background-color: #ff8906;
+    color: #fffffe;
+    transition: 0.3s;
+}
+
+.secondary-btn {
+    background-color: #e53170;
+    color: #fffffe;
+    transition: 0.3s;
+}
+
+.primary-text {
+    color: #ff8906;
+}
+
+.primary-bg {
+    background-color: #ff8906;
+}
+
+.secondary-text {
+    color: #e53170;
+}
+
+.banner-area {
+    height: 100vh;
+}
+
+.component-headings {
+    display: inline-block;
+    font-weight: 600;
+    position: relative;
+}
+
+.component-headings::before {
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 5px;
+    bottom: 0;
+    border-bottom: 4px solid #ff8906;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* scroll design */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #363636;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff8b06da;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8800;
+}

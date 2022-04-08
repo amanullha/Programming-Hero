@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ***********connect to the external Style sheet************  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="title-icon.png" type="image/icon type">
+
+
+    <title>Number Conversion System</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="heading">
+            <img src="logo.png" alt="">
+            <div class="text">
+                <h1>Number Conversion</h1>
+                <h2>System</h1>
+            </div>
+        </div>
+        <div class="main-body">
+            <div class="input-phase">
+
+                <input id="input" type="text" placeholder="Enter Number">
+
+                <select onchange="changeSelect()" name="type" id="type" class="type">
+                    <option value="Decimal">Decimal</option>
+                    <option value="Binary">Binary</option>
+                    <option value="Octal">Octal</option>
+                    <option value="Hex">Hex</option>
+                </select>
+
+            </div>
+
+            <div class="output-phase">
+
+                <div class="converted-output">
+                    <label for="">Decimal: </label>
+                    <h3 id="decimal">00<sub id="sub">(10)</sub></h3>
+                </div>
+                <div class="converted-output">
+                    <label for="">Binary: </label>
+                    <h3 id="Binary">00<sub id="sub">(2)</sub></h3>
+                </div>
+                <div class="converted-output">
+                    <label for="">Octal: </label>
+                    <h3 id="Octal">00<sub id="sub">(8)</sub></h3>
+                </div>
+                <div class="converted-output">
+                    <label for="">Hex: </label>
+                    <h3 id="Hex">00<sub id="sub">(16)</sub></h3>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ***********connect to the external JavaScript************  -->
+
+    <script src="dynamic.js"></script>
+</body>
+
+</html>

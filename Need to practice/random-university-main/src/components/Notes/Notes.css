@@ -1,0 +1,18 @@
+.notes {
+    color: #fffffe;
+    margin-top: -70px;
+    margin-bottom: 0;
+    padding: 20px 20px;
+}
+
+.note1 {
+    background-color: #004643;
+}
+
+.note2 {
+    background-color: #e16162;
+}
+
+.note3 {
+    background-color: #f9bc60;
+}

@@ -1,0 +1,98 @@
+<!-- 
+
+    some types of event:
+
+    onchange	-> An HTML element has been changed
+    onclick	    -> The user clicks an HTML element
+    onmouseover	-> The user moves the mouse over an HTML element
+    onmouseout	-> The user moves the mouse away from an HTML element
+    onkeydown	-> The user pushes a keyboard key
+    onload	    -> The browser has finished loading the page
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25-1 What is Event, different types of event in web
+    </title>
+</head>
+
+<body>
+    <h1>Play with clicked</h1>
+    <button onclick="bodyBgChange(true)">Background Change to RED</button>
+    <button onclick="bodyBgChange(false)">Background Change to GREEN</button>
+    <button id="yellow-btn">Background Change to Yellow</button>
+    <button id="goldenRod-btn">Background Change to GodenRod</button>
+
+    <button id="make-blue-button">Click me: Blue</button>
+    <button id="make-pink-button">Click me: pink</button>
+    <button id="make-lightBlue-button">Click me: light blue</button>
+    <script>
+
+
+        function bodyBgChange(f) {
+            if (f) document.body.style.backgroundColor = "red";
+            else document.body.style.backgroundColor = "green";
+        }
+
+        const blueButton = document.getElementById('make-blue-button');
+
+
+
+
+
+        // handle event using anonimous function
+        blueButton.onclick = function () {
+            document.body.style.backgroundColor = 'blue';
+        }
+
+
+
+        const yelloButton = document.getElementById('yellow-btn');
+
+        // just declar function name not with first bracket. because if you add first bracket it's means you called the function before clicked the button.
+        yelloButton.onclick = makeYellow;
+
+        function makeYellow() {
+            document.body.style.backgroundColor = 'yellow';
+        }
+
+
+
+
+        // handle by using event listener
+        const goldenRod = document.getElementById('goldenRod-btn');
+
+        goldenRod.addEventListener('click', makeGoldenRod);
+
+        function makeGoldenRod() {
+            document.body.style.backgroundColor = 'goldenrod';
+        }
+
+        // added event listener
+
+        const pinkButton = document.getElementById('make-pink-button');
+
+        pinkButton.addEventListener('click', function () {
+
+            document.body.style.backgroundColor = "pink";
+        })
+
+
+        // short Cut event listener
+        document.getElementById('make-lightBlue-button').addEventListener('click', function () {
+            document.body.style.backgroundColor = "lightblue";
+        })
+
+
+
+    </script>
+</body>
+
+</html>

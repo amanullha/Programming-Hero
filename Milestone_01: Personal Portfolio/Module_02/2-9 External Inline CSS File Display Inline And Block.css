@@ -1,0 +1,28 @@
+   .blogContainer {
+            background-color: rgb(229, 193, 145);
+            border: 20px solid yellow;
+            border-radius: 10px;
+            margin: 20px 40px 50px;
+
+            padding: 20px;
+            /* padding: 20px 10px;  */
+            /* padding: 20px 22px 50px; */
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        .authorName {
+            color: red;
+        }
+
+        /* align blog title text  */
+        .blog-title {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 700;
+        }
+
+        .blogContainer p {
+
+            text-align: justify;
+        }

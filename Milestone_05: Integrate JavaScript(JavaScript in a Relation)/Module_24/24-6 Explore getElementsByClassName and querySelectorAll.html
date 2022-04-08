@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <article class="blog">
+            <h1>This is blog heading </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, earum praesentium laboriosam porro
+                dignissimos facere quas</p>
+        </article>
+        <article class="blog">
+            <h1>This is blog heading </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, earum praesentium laboriosam porro
+                dignissimos facere quas</p>
+        </article>
+        <article class="blog">
+            <h1>This is blog heading </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, earum praesentium laboriosam porro
+                dignissimos facere quas</p>
+        </article>
+        <article class="blog">
+            <h1>This is blog heading </h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, earum praesentium laboriosam porro
+                dignissimos facere quas</p>
+        </article>
+    </div>
+
+    <script>
+
+        const blogs = document.getElementsByClassName('blog');
+        for (const b of blogs) {
+            b.style.border = ' 2px solid orange';
+            b.style.padding = "10px 20px";
+        }
+
+        const paragraph = document.querySelectorAll(".blog p ");
+        paragraph.style.backgroundColor = "yellow";
+
+    </script>
+</body>
+
+</html>

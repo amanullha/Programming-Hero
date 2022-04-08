@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Document 1</h1>
+    <h1>Hello Document 2</h1>
+    <h1>Hello Document 3</h1>
+    <h1>Hello Document 4</h1>
+
+    <script>
+        console.log(document);
+        let obj = {
+            name: "aman ullha",
+            year: 23,
+            loaction: "Debidear, comilla, Dhaka"
+        };
+        const h2total = document.getElementsByTagName('h1');
+        for (let x of h2total)
+            console.log(x.innerText);
+    </script>
+</body>
+
+</html>

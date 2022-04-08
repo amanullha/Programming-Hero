@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Phone Hut</title>
+    <link rel="icon" href="images/logo/logo-1.png" type="image/icon type">
+
+    <!-- link to external css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- link to external css for Responsive -->
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- link to bootstrap -->
+
+    <link rel="stylesheet" href="bootstrap file/bootstrap.min.css">
+    <script src="bootstrap file/bootstrap.bundle.min.js"></script>
+    <!-- 
+ 
+    <!-link to Font Awesome -->
+    <script src="https://kit.fontawesome.com/15c163ad5e.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <header class="mt-5">
+
+        <div class="web-description d-flex flex-column justify-content-center align-items-center">
+            <div class="logo w-25 text-center">
+                <a href="index.html"><img width="10%" src="images/logo/logo-1.png" alt="website logo"></a>
+            </div>
+
+            <div class="web-name w-50 lg:w-25 text-center">
+                <a href="index.html">
+                    <img width="40% " src="images/logo/name-1.png" alt="">
+                </a>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- header html ends  -->
+
+    <!-- main part html start  -->
+
+    <main>
+
+        <!-- search section start  -->
+
+        <section class="search-section d-flex justify-content-center align-content-center my-3">
+
+            <div class="search-box d-flex justify-content-center align-content-center mx-2  ">
+
+                <input id="search-input" class="search-input ps-3 py-2 w-75 " type="text" value=""
+                    placeholder="Search Phone's 📱">
+
+                <button id="search-btn" class="search-btn py-2 w-25 p-lg-3 p-md-3 p-sm-1 fw-bold ">Search</button>
+
+            </div>
+        </section>
+
+        <!-- search section ends -->
+
+
+        <!-- alart section start  -->
+        <section class="alert">
+
+            <!-- alert start  -->
+
+            <div class="alert-div text-center">
+                <h3 id="alert-text">
+
+                </h3>
+            </div>
+            <!-- alert end -->
+            <!-- spinner html  -->
+            <div id="spinner-div" class="d-none spinner-div d-flex justify-content-center align-content-center">
+                <svg class="spinner " width="30px" height="30px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30">
+                    </circle>Loading
+                </svg>
+                <h4 class="ms-4">Loading...</h4>
+            </div>
+
+        </section>
+        <!-- alart section end -->
+
+        <section class="modal-section">
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div id="modal-dialog" class="modal-dialog modal-xl">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="phones-collection ">
+            <div id="phones"
+                class="row gap-3 justify-content-center mx-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 position-relative  ">
+
+
+
+            </div>
+        </section>
+
+    </main>
+
+    <section id="more-phones" class="more-phones m-5">
+        <div id="show-more" class="show-more mx-auto  d-flex justify-content-center align-items-center">
+            <button id="show-more-btn" class=" btn ">Show more ...</button>
+        </div>
+    </section>
+
+
+    <!-- main part html ends -->
+
+
+    <!-- footer part start  -->
+    <footer class="mt-5"></footer>
+    <!-- footer part ends -->
+
+
+    <!-- link to external JavaScript  -->
+    <script src="js/javaScript.js"></script>
+</body>
+
+</html>

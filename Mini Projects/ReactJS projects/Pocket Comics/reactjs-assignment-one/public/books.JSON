@@ -1,0 +1,73 @@
+[
+    {
+        "ID": "book001", 
+        "Name": "Bad Man Detective", 
+        "Price":"250",
+        "Image": "./comics Books/bad man detective.jpg"
+    },
+  
+    {
+        "ID": "book002", 
+        "Name": "Dear Devil", 
+        "Price":"270",
+        "Image": "./comics Books/Dear devil.jpg"
+    },
+    {
+        "ID": "book003", 
+        "Name": "Jonna and the Unpossible Monsters", 
+        "Price":"250",
+        "Image": "./comics Books/Jonna.jpg"
+    },
+  
+    {
+        "ID": "book004", 
+        "Name": "Man of Steel", 
+        "Price":"50",
+        "Image": "./comics Books/Man Of Steel.jpg"
+    },
+  
+    {
+        "ID": "book005", 
+        "Name": "Mercuryheat", 
+        "Price":"100",
+        "Image": "./comics Books/mercuryheat.jpg"
+    },
+    {
+        "ID": "book006", 
+        "Name": "Spider Man", 
+        "Price":"105",
+        "Image": "./comics Books/spider man.jpg"
+    },
+  
+    {
+        "ID": "book007", 
+        "Name": "Teen Tinanse", 
+         "Price":"115",
+        "Image": "./comics Books/Titans.jpg"
+    },
+    {
+        "ID": "book008", 
+        "Name": "Explorers on teh moon", 
+         "Price":"130",
+        "Image": "./comics Books/Explorers on teh moon.jpg"
+    },
+    {
+        "ID": "book009", 
+        "Name": "wimpy kid", 
+         "Price":"180",
+        "Image": "./comics Books/wimpy kid.jpg"
+    },
+    {
+        "ID": "book010", 
+        "Name": "The avengers Titans",
+         "Price":"355", 
+        "Image": "./comics Books/The avengers Titans.jpg"
+    },
+    {
+        "ID": "book011", 
+        "Name": "The seven crystal balls", 
+         "Price":"405",
+        "Image": "./comics Books/the-seven-crystal-balls.jpg"
+    }
+    
+]

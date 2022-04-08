@@ -1,0 +1,16 @@
+.home-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2px;
+    margin: 20px 15px;
+}
+.t-shirts{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    grid-gap:10px;
+   
+}
+.cart-container{
+    margin: 0px auto;
+}

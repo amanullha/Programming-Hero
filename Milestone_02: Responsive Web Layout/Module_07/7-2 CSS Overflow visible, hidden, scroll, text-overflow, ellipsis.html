@@ -1,0 +1,168 @@
+<!-- 
+
+Ther are 4 type of overflow
+
+1. overflow:visible(default)
+
+
+2. overflow:hidden
+
+    This hidden tag contens will not go to the others tags or outsite the tags. 
+
+3. overflow:scroll; scroll in 2 side
+
+    This hidden tag contens will ot go t the others tags or outsite the tags. but you can be able to see the full contents with scrolling . The scroll bar will be added to this contents. 
+
+    A. overflow-x: scroll; scroll in button side
+    B. overflow-y: scroll; scroll in left side
+
+
+4. overflow:auto
+
+
+5.text-overflow:ellipsis;
+
+    if means when a big text show some text and with 3 dot. 
+
+
+6. white-space: nowrap;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    output: hello am...
+
+    it means the nowrap tag will not stay in parent tag. it will take the weight and height depand on it's needs.you have to be use this two css. 
+
+
+7. toltip 
+
+    toltip will show the hidden text which was hidden by the ellipsis. actually toltip use the show something text when mouse over anything where seted the toltiop. 
+
+    
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .up {
+            width: 100px;
+            border: 2px solid rgb(61, 61, 3);
+            /* overflow: hidden; */
+
+        }
+
+        .up p {
+            white-space: nowrap;
+            /* overflow: hidden; */
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+
+        }
+
+        .mega-box {
+            width: 500px;
+            height: 500px;
+            border: 5px solid steelblue;
+            overflow: auto;
+        }
+
+        .mega-box2 {
+            width: 500px;
+            height: 500px;
+            border: 5px solid rgb(238, 17, 128);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dolore eirmod ea clita sit amet consetetur duo et kasd..</h1>
+
+    <div class="up" title="this is a paragraph. and it will show via a toltip">
+        <p id="shorttext">this is a paragraph. and it will show via a toltip</p>
+    </div>
+
+    <div class="mega-box">
+        <pa>
+            Et est amet amet sit sit et eos at dolore, et est elitr vero invidunt et ut. Vero tempor amet eos invidunt
+            sit ea elitr rebum et. Ipsum dolore sed est et voluptua dolor, ipsum erat elitr stet eos vero dolor, sed est
+            est et duo, vero sit nonumy no justo gubergren stet. Et lorem sadipscing nonumy dolor lorem tempor. Amet
+            ipsum invidunt vero amet vero diam, magna et erat invidunt accusam sea est, dolor consetetur dolore erat duo
+            labore, et stet vero sadipscing et sit amet gubergren. Lorem labore amet sea sed et rebum sea, nonumy et sit
+            amet et, et ea at nonumy labore et nonumy erat lorem dolores, amet lorem ea nonumy sea justo et. Ipsum
+            invidunt accusam dolor ea. Sed labore sed ut no amet et eirmod invidunt tempor. Sit sit justo dolores
+            labore, et clita erat stet est clita sanctus erat. Sed no ipsum sea et voluptua, tempor eos dolore et sit
+            est kasd tempor erat. Accusam duo ipsum diam sed ea dolores. Rebum ea ipsum amet labore labore, diam et et
+            et sanctus accusam sed at, elitr est amet diam consetetur voluptua amet, erat lorem ut invidunt sanctus
+            takimata aliquyam, elitr sed consetetur no.
+            Et est amet amet sit sit et eos at dolore, et est elitr vero invidunt et ut. Vero tempor amet eos invidunt
+            sit ea elitr rebum et. Ipsum dolore sed est et voluptua dolor, ipsum erat elitr stet eos vero dolor, sed est
+            est et duo, vero sit nonumy no justo gubergren stet. Et lorem sadipscing nonumy dolor lorem tempor. Amet
+            ipsum invidunt vero amet vero diam, magna et erat invidunt accusam sea est, dolor consetetur dolore erat duo
+            labore, et stet vero sadipscing et sit amet gubergren. Lorem labore amet sea sed et rebum sea, nonumy et sit
+            amet et, et ea at nonumy labore et nonumy erat lorem dolores, amet lorem ea nonumy sea justo et. Ipsum
+            invidunt accusam dolor ea. Sed labore sed ut no amet et eirmod invidunt tempor. Sit sit justo dolores
+            labore, et clita erat stet est clita sanctus erat. Sed no ipsum sea et voluptua, tempor eos dolore et sit
+            est kasd tempor erat. Accusam duo ipsum diam sed ea dolores. Rebum ea ipsum amet labore labore, diam et et
+            et sanctus accusam sed at, elitr est amet diam consetetur voluptua amet, erat lorem ut invidunt sanctus
+            takimata aliquyam, elitr sed consetetur no.
+            Et est amet amet sit sit et eos at dolore, et est elitr vero invidunt et ut. Vero tempor amet eos invidunt
+            sit ea elitr rebum et. Ipsum dolore sed est et voluptua dolor, ipsum erat elitr stet eos vero dolor, sed est
+            est et duo, vero sit nonumy no justo gubergren stet. Et lorem sadipscing nonumy dolor lorem tempor. Amet
+            ipsum invidunt vero amet vero diam, magna et erat invidunt accusam sea est, dolor consetetur dolore erat duo
+            labore, et stet vero sadipscing et sit amet gubergren. Lorem labore amet sea sed et rebum sea, nonumy et sit
+            amet et, et ea at nonumy labore et nonumy erat lorem dolores, amet lorem ea nonumy sea justo et. Ipsum
+            invidunt accusam dolor ea. Sed labore sed ut no amet et eirmod invidunt tempor. Sit sit justo dolores
+            labore, et clita erat stet est clita sanctus erat. Sed no ipsum sea et voluptua, tempor eos dolore et sit
+            est kasd tempor erat. Accusam duo ipsum diam sed ea dolores. Rebum ea ipsum amet labore labore, diam et et
+            et sanctus accusam sed at, elitr est amet diam consetetur voluptua amet, erat lorem ut invidunt sanctus
+            takimata aliquyam, elitr sed consetetur no.
+        </pa>
+    </div>
+    <div class="mega-box2">
+        <pa>
+            Et est amet amet sit sit et eos at dolore, et est elitr vero invidunt et ut. Vero tempor amet eos invidunt
+            sit ea elitr rebum et. Ipsum dolore sed est et voluptua dolor, ipsum erat elitr stet eos vero dolor, sed est
+            est et duo, vero sit nonumy no justo gubergren stet. Et lorem sadipscing nonumy dolor lorem tempor. Amet
+            ipsum invidunt vero amet vero diam, magna et erat invidunt accusam sea est, dolor consetetur dolore erat duo
+            labore, et stet vero sadipscing et sit amet gubergren. Lorem labore amet sea sed et rebum sea, nonumy et sit
+            amet et, et ea at nonumy labore et nonumy erat lorem dolores, amet lorem ea nonumy sea justo et. Ipsum
+            invidunt accusam dolor ea. Sed labore sed ut no amet et eirmod invidunt tempor. Sit sit justo dolores
+            labore, et clita erat stet est clita sanctus erat. Sed no ipsum sea et voluptua, tempor eos dolore et sit
+            est kasd tempor erat. Accusam duo ipsum diam sed ea dolores. Rebum ea ipsum amet labore labore, diam et et
+            et sanctus accusam sed at, elitr est amet diam consetetur voluptua amet, erat lorem ut invidunt sanctus
+            takimata aliquyam, elitr sed consetetur no.
+            Et est amet amet sit sit et eos at dolore, et est elitr vero invidunt et ut. Vero tempor amet eos invidunt
+            sit ea elitr rebum et. Ipsum dolore sed est et voluptua dolor, ipsum erat elitr stet eos vero dolor, sed est
+            est et duo, vero sit nonumy no justo gubergren stet. Et lorem sadipscing nonumy dolor lorem tempor. Amet
+            ipsum invidunt vero amet vero diam, magna et erat invidunt accusam sea est, dolor consetetur dolore erat duo
+            labore, et stet vero sadipscing et sit amet gubergren. Lorem labore amet sea sed et rebum sea, nonumy et sit
+            amet et, et ea at nonumy labore et nonumy erat lorem dolores, amet lorem ea nonumy sea justo et. Ipsum
+            invidunt accusam dolor ea. Sed labore sed ut no amet et eirmod invidunt tempor. Sit sit justo dolores
+            labore, et clita erat stet est clita sanctus erat. Sed no ipsum sea et voluptua, tempor eos dolore et sit
+            est kasd tempor erat. Accusam duo ipsum diam sed ea dolores. Rebum ea ipsum amet labore labore, diam et et
+            et sanctus accusam sed at, elitr est amet diam consetetur voluptua amet, erat lorem ut invidunt sanctus
+            takimata aliquyam, elitr sed consetetur no.
+            Et est amet amet sit sit et eos at dolore, et est elitr vero invidunt et ut. Vero tempor amet eos invidunt
+            sit ea elitr rebum et. Ipsum dolore sed est et voluptua dolor, ipsum erat elitr stet eos vero dolor, sed est
+            est et duo, vero sit nonumy no justo gubergren stet. Et lorem sadipscing nonumy dolor lorem tempor. Amet
+            ipsum invidunt vero amet vero diam, magna et erat invidunt accusam sea est, dolor consetetur dolore erat duo
+            labore, et stet vero sadipscing et sit amet gubergren. Lorem labore amet sea sed et rebum sea, nonumy et sit
+            amet et, et ea at nonumy labore et nonumy erat lorem dolores, amet lorem ea nonumy sea justo et. Ipsum
+            invidunt accusam dolor ea. Sed labore sed ut no amet et eirmod invidunt tempor. Sit sit justo dolores
+            labore, et clita erat stet est clita sanctus erat. Sed no ipsum sea et voluptua, tempor eos dolore et sit
+            est kasd tempor erat. Accusam duo ipsum diam sed ea dolores. Rebum ea ipsum amet labore labore, diam et et
+            et sanctus accusam sed at, elitr est amet diam consetetur voluptua amet, erat lorem ut invidunt sanctus
+            takimata aliquyam, elitr sed consetetur no.
+        </pa>
+    </div>
+</body>
+
+</html>

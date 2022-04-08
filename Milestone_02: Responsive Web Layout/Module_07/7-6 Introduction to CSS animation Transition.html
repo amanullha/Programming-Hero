@@ -1,0 +1,71 @@
+<!-- 
+transition
+transition-delay
+transition-duration
+transition-property
+transition-timing-function
+
+rule:
+
+    transition: css-property duration speeding-way starting-delay;
+                
+    transition: width 10s linear 2s;
+
+    transition: width 10s linear 2s, height 10s linear 2s;
+
+
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid greenyellow;
+            padding: 10px;
+            background-color: rgb(120, 218, 218);
+
+
+
+        }
+
+        .box:hover {
+            width: 400px;
+            height: 400px;
+            border: 2px solid rgb(137, 156, 109);
+
+            /* transition: width 10s linear 2s, height 10s linear 2s, transform 10s; */
+            transition: width .5s linear, height .5s linear, transform .5s;
+            transform: rotate(360deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>Transition</h3>
+    </div>
+    <div class="box">
+        <h3>Transition</h3>
+    </div>
+    <div class="box">
+        <h3>Transition</h3>
+    </div>
+    <div class="box">
+        <h3>Transition</h3>
+    </div>
+</body>
+
+</html>

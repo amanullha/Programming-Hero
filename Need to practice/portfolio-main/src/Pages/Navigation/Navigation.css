@@ -1,0 +1,21 @@
+.navlinks {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.navlinks.active::before,
+.navlinks:hover::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 5px;
+    bottom: 0;
+    border-bottom: 2px solid #ff8906;
+}
+
+.nav-bg {
+    background-color: #000000f5;
+}

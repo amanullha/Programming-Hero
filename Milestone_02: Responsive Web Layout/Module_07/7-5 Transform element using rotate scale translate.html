@@ -1,0 +1,54 @@
+<!-- 
+    Transform : move the div from 4 side means zoom in and zoom out. 
+
+    transform: scale(.75); means half from the initial size
+    transform: scale(.5) rotate(30deg); became half size from initial size and reotate 30 degree
+
+    transform:translate(100px)translateY(200px); move right 100px and move button 200 px 
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 3px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        .sub-box {
+            border: 3px solid rgb(231, 118, 118);
+            width: 200px;
+            height: 200px;
+
+            background-color: aquamarine;
+            transform: scale(.5) rotate(30deg) translate(100px)translateY(200px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="sub-box">box-1</div>
+    </div>
+    <div class="box">
+        <div class="sub-box">box-2</div>
+    </div>
+    <div class="box">
+        <div class="sub-box">box-3</div>
+    </div>
+    <div class="box">
+        <div class="sub-box">box-4</div>
+    </div>
+
+</body>
+
+</html>
