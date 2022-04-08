@@ -33,9 +33,10 @@
 
 4. Delete initial git file from folder in desktop. 
 
-	it happend when we clone a private repo . because in the private rep alrady have a git init file. because git init file created by the creator of the main file.  
+	it happend when we clone a private repo . because in the private rep alrady have a git init file. because git init file created by the creator of the main file. after use it , will be remove .git file
 
 	command: rm -rf .git
+
 
 
 
