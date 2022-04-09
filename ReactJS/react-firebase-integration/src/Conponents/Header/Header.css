@@ -1,0 +1,12 @@
+nav a{
+
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
