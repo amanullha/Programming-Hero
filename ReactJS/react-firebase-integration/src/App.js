@@ -5,6 +5,9 @@ import Home from './Conponents/Home/Home';
 import Header from './Conponents/Header/Header';
 import NotFound from './Conponents/NotFound/NotFound';
 import Login from './Conponents/Login/Login';
+import Orders from './Conponents/Orders/Orders';
+import Register from './Conponents/Register/Register';
+import RequireAuth from './Conponents/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -14,7 +17,15 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
+
+        {/* Private route  */}
+        <Route path='/orders' element={<RequireAuth><Orders /></RequireAuth>} />
+
+
+        <Route path='/register' element={<Register />} />
+
         <Route path='/login' element={<Login />} />
+
         <Route path='*' element={<NotFound />} />
       </Routes>
 

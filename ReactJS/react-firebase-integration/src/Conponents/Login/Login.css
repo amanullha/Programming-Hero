@@ -1,0 +1,22 @@
+
+.or{
+    
+    width: 50%;
+    margin: 0 auto;
+   display: flex;
+   align-items: center;
+   gap:5px;
+  
+}
+button{
+    border-radius: 20px;
+    height: 30px;
+    width: 200px;
+    cursor: pointer;
+    
+}
+button img{
+    width: 100%;
+    height: 100%;
+}
+

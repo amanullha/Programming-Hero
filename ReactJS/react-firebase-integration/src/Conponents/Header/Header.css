@@ -1,12 +1,38 @@
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 nav a{
 
     text-decoration: none;
     margin: 0 5px;
     font-weight: bold;
     font-size: 30px;
+    color: rgb(58, 45, 142);
 
 }
 
 nav a:hover{
     text-decoration: underline;
+}
+
+.bio{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-left: 5px;
+}
+.bio img{
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+.bio h3{
+    margin: 0;
+    padding: 0;
 }
