@@ -1,19 +1,41 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
+
 
 const SignUp = () => {
 
-    const [name, setName] = useState('');
+    // const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('  ');
+    const [myError, setMyError] = useState('  ');
 
 
 
-    const handleNameChange = (e) => {
-        setName(e.target.value);
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+
+    if (user) {
+        navigate('/shop')
+
     }
+
+    const [sendEmailVerification, sending, errorr] = useSendEmailVerification(
+        auth
+    );
+
+
+    // const handleNameChange = (e) => {
+    //     setName(e.target.value);
+    // }
+
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     }
@@ -30,11 +52,33 @@ const SignUp = () => {
 
 
     }
+
+
+
     const handleCreateUser = (event) => {
         event.preventDefault()
 
-        if (password !== confirmPassword) setError('Both password are not same!')
 
+
+        if (password !== confirmPassword) {
+            setMyError('Both password are not same!')
+            return;
+        }
+        if (password.length < 5) {
+            setMyError('Password must be 5 characters or longer')
+            return;
+        }
+        if (error) {
+            setMyError(error);
+            return;
+        }
+
+
+        console.log("email: ", email, "  password : ", password);
+
+        createUserWithEmailAndPassword(email, password);
+        sendEmailVerification();
+        console.log("Email verification send");
 
     }
 
@@ -45,27 +89,38 @@ const SignUp = () => {
 
 
                 <form onSubmit={handleCreateUser} >
-                    <div className="input-group">
+
+
+                    {/* <div className="input-group">
                         <label htmlFor='name' >Name</label>
-                        <input onChange={handleNameChange} type="text" name="name" id="" placeholder='Enter your name' required />
+                        <input onChange={handleNameChange} type="name" name="name" id="" placeholder='Enter your name' required />
+                    </div> */}
+
+                    <div className="input-group">
+                        <label htmlFor='email' >Email</label>
+                        <input onChange={handleEmailChange} type="email" name="email" id="" placeholder='Enter your email' required />
                     </div>
 
-                    <div onChange={handleEmailChange} className="input-group">
-                        <label htmlFor='email' >Email</label>
-                        <input type="email" name="email" id="" placeholder='Enter your email' required />
-                    </div>
                     <div className="input-group">
                         <label htmlFor='password' >Password</label>
                         <input onChange={handlePasswordChange} type="password" name="password" id="" placeholder='Enter your password' required />
                     </div>
+
                     <div className="input-group">
                         <label htmlFor='password' >Confirm Password</label>
                         <input onChange={handleConfirmPasswordChange} type="password" name="password" id="" placeholder='Confirm password' required />
                     </div>
 
-                    <p style={{ color: 'red' }}>{error}</p>
+                    
+                    <small style={{ color: "green" }}>
+                        {loading ? "Loading.." : ""}
+                    </small>
 
-                    <input className='form-submit' type="submit" value='Login' />
+                    <p style={{ color: 'red' }}>{myError}</p>
+
+                    <input className='form-submit' type="submit" value='Register' />
+
+
                 </form>
 
                 <p>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import './Login.css'
 
 const Login = () => {
@@ -7,10 +9,19 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [myError, setMyError] = useState('');
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
-
+    const navigate = useNavigate();
+    if (user) {
+        navigate('/shop');
+    }
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -20,11 +31,27 @@ const Login = () => {
     }
 
 
+    const handleLogInWithGoogle = () => {
+
+    }
+
+
+    const handleLogIn = (event) => {
+        event.preventDefault();
 
 
 
-    const handleLogIn = () => {
+        if (password.length === 0 || email.length === 0) {
+            setMyError('Please Enter email and password properly')
+            return;
+        }
+        if (error) {
+            setMyError(error?.message);
+            return;
+        }
 
+        signInWithEmailAndPassword(email, password);
+        console.log("LogIn successful");
     }
 
     return (
@@ -33,7 +60,7 @@ const Login = () => {
                 < h1 className='form-title'>Login </h1>
 
 
-                <form>
+                <form onSubmit={handleLogIn}>
                     <div className="input-group">
                         <label htmlFor='email' >Email</label>
                         <input onChange={handleEmailChange} type="email" name="email" id="" required />
@@ -42,6 +69,13 @@ const Login = () => {
                         <label htmlFor='password' >Password</label>
                         <input onChange={handlePasswordChange} type="password" name="password" id="" required />
                     </div>
+
+                    <small style={{ color: 'red' }}>{myError}</small>
+                    
+                    <small style={{ color: "green" }}>
+                        {loading ? "Loading.." : ""}
+                    </small>
+
                     <input className='form-submit' type="submit" value='Login' />
                 </form>
 
@@ -57,7 +91,7 @@ const Login = () => {
 
                 </div>
 
-                <button onClick={handleLogIn}>
+                <button onClick={handleLogInWithGoogle}>
                     <img src="https://img.favpng.com/7/1/24/google-logo-google-search-icon-png-favpng-DLXaPGArrFH6yJjYE8USnMuvX_t.jpg" alt="" />
                     <span>Continue with Google</span>
                 </button>
