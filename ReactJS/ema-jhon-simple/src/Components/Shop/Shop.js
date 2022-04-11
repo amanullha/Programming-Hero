@@ -49,7 +49,7 @@ const Shop = () => {
 
         let newCart = [];
 
-        const exists = cart.find(product => product.id == SelectedProduct.id);
+        const exists = cart.find(product => product.id === SelectedProduct.id);
 
         if (exists) {
             exists.quantity++;
@@ -85,7 +85,6 @@ const Shop = () => {
                         <button >Review Orders</button>
 
                         <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
-
                     </Link>
                 </Cart>
 

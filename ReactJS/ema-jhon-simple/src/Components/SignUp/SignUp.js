@@ -111,7 +111,7 @@ const SignUp = () => {
                         <input onChange={handleConfirmPasswordChange} type="password" name="password" id="" placeholder='Confirm password' required />
                     </div>
 
-                    
+
                     <small style={{ color: "green" }}>
                         {loading ? "Loading.." : ""}
                     </small>

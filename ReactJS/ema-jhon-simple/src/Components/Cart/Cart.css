@@ -8,4 +8,9 @@
 .cart-info{
     margin: 100px 10px;
     padding:10px 0px ;
+    
+}
+.cart-info p{
+    font-size: large;
+    margin-top: 1rem;
 }

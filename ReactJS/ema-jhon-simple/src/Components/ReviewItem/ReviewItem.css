@@ -6,6 +6,7 @@
     padding: 5px 10px;
     border: 1px solid black;
     border-radius: 15px;
+    margin: 10px;
 }
 .left-side{
      display: flex;

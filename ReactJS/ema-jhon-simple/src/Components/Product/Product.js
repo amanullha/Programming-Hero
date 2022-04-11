@@ -24,11 +24,11 @@ const Product = ({ handleAddToCart, product }) => {
                 <p className='product-ratings'>Rating: {ratings}</p>
             </div>
 
-            <button onClick={() => handleAddToCart(product)} className='button-cart'>
+            <button onClick={() => handleAddToCart(product)} className='button-cart-design'>
                 <p>Add to Cart</p>
-                <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
+                <FontAwesomeIcon className='cart-icon' icon={faShoppingCart} />
             </button>
-            
+
         </div>
     );
 };
