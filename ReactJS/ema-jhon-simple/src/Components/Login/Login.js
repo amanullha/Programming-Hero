@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
@@ -10,6 +10,9 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [myError, setMyError] = useState('');
+
+
+    const [signInWithGoogle, googleuser, googleloading, googleerror] = useSignInWithGoogle(auth);
 
 
     const navigate = useNavigate();
@@ -24,7 +27,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
 
-    if (user) {
+    if (user || googleuser) {
         navigate(from, { replace: true });
     }
 
@@ -36,9 +39,6 @@ const Login = () => {
     }
 
 
-    const handleLogInWithGoogle = () => {
-
-    }
 
 
     const handleLogIn = (event) => {
@@ -58,6 +58,20 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
         console.log("LogIn successful");
     }
+
+
+
+
+    const handleLogInWithGoogle = () => {
+        signInWithGoogle()
+
+        if (googleerror) {
+            setMyError(googleerror.message);
+        }
+    }
+
+
+
 
     return (
         <div className='form-container'>
@@ -96,7 +110,7 @@ const Login = () => {
 
                 </div>
 
-                <button onClick={handleLogInWithGoogle}>
+                <button onClick={() => signInWithGoogle()}>
                     <img src="https://img.favpng.com/7/1/24/google-logo-google-search-icon-png-favpng-DLXaPGArrFH6yJjYE8USnMuvX_t.jpg" alt="" />
                     <span>Continue with Google</span>
                 </button>
