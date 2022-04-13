@@ -1,0 +1,6 @@
+1. npx create-react-app project-name
+2. npm install axios
+3. npm install react-router-dom@6
+4. npm code .
+5. npm run start
+6. npm install firebase
