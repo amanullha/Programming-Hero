@@ -1,7 +1,19 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import auth from '../../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+
 const SignUp = () => {
+
+    const [errors, setErrors] = useState("");
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     const nameRefRegister = useRef("");
     const emailRefRegister = useRef("");
@@ -12,6 +24,9 @@ const SignUp = () => {
         navigate('/login');
     }
 
+    if (user) {
+        navigate('/home')
+    }
 
     const handleRegisterSubmit = event => {
         event.preventDefault();
@@ -20,7 +35,16 @@ const SignUp = () => {
         const email = emailRefRegister.current.value;
         const password = passwordRefRegister.current.value;
 
-        console.log(email, "  ", password);
+
+        if (error) {
+            setErrors(error.message);
+            return;
+        }
+
+        console.log(name, "  ", email, "  ", password);
+
+        createUserWithEmailAndPassword(email, password);
+        setErrors("Registered successfully!");
     }
 
 
@@ -76,7 +100,7 @@ const SignUp = () => {
                             required
                         />
                     </div>
-
+                    <small>{errors}</small>
                     <div class="flex justify-between items-center mb-6">
                         <div class="form-group form-check">
                             <input
@@ -84,6 +108,7 @@ const SignUp = () => {
                                 class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                                 id="exampleCheck2"
                             />
+
                             <label class="form-check-label inline-block text-gray-800" for="exampleCheck2"
                             >Remember me</label
                             >
@@ -96,7 +121,7 @@ const SignUp = () => {
 
 
 
-                        <input class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full" type="submit" value="LOGIN" />
+                        <input class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full" type="submit" value="REGISTER" />
 
                         <p class="text-sm font-semibold mt-2 pt-1 mb-0">
                             Do you have an account?

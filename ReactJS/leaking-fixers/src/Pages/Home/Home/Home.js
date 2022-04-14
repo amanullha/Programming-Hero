@@ -8,7 +8,7 @@ const Home = () => {
         <div id='home'>
             <h2>Home</h2>
             <ReactSlider></ReactSlider>
-            <Services></Services>
+            <Services id='services'></Services>
             <Experts></Experts>
         </div>
     );

@@ -1,7 +1,19 @@
 import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const Login = () => {
+
+    const [errors, setErrors] = useState("");
+
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
 
     const emailRefLogin = useRef("");
@@ -10,8 +22,18 @@ const Login = () => {
 
 
     const navigate = useNavigate();
+
     const handleToRegister = () => {
         navigate('/register');
+    }
+
+
+    // redirect to last page after login
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+    if (user) {
+        navigate(from, { replace: true });
     }
 
 
@@ -21,7 +43,16 @@ const Login = () => {
         const email = emailRefLogin.current.value;
         const password = passwordRefLogin.current.value;
 
+        if (error) {
+            setErrors(error.message);
+            return;
+        }
+
         console.log(email, "  ", password);
+
+        signInWithEmailAndPassword(email, password)
+
+        setErrors("Signed in successfully")
     }
 
 
@@ -69,7 +100,7 @@ const Login = () => {
                             required
                         />
                     </div>
-
+                    <small>{errors}</small>
                     <div class="flex justify-between items-center mb-6">
                         <div class="form-group form-check">
                             <input

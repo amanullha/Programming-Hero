@@ -7,6 +7,8 @@ import ServiceDetails from "./Pages/ServiceDetails/ServiceDetails";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Login from "./Pages/Login/Login/Login";
 import SignUp from "./Pages/Login/SingUp/SignUp";
+import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
+import CheckOut from "./Pages/CheckOut/CheckOut/CheckOut";
 
 
 
@@ -24,6 +26,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
+
+          <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} />
+          {/* <Route path="/checkout" element={<CheckOut />} /> */}
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<SignUp />} />

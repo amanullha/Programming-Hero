@@ -4,10 +4,25 @@ import { useState } from 'react';
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import CustomLink from '../CustomLink/CustomLink';
 
 const Header = () => {
 
+    const [user, loading, error] = useAuthState(auth);
+
+
     const [open, setOpen] = useState(false);
+
+    const handleSingOut = () => {
+        signOut(auth);
+    }
+
+
+    // animated under line on hover 
+
 
 
     return (
@@ -24,15 +39,20 @@ const Header = () => {
 
             <ul className={`z-40 ${open ? "w-full" : ""} bg-black absolute md:static flex flex-col sm:flex-col md:flex-row duration-500 ease-in ${open ? 'top-12' : 'top-[-220px]'}  `}>
 
-                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/home">HOME</Link>
+                <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/home">HOME</CustomLink>
 
-                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/services">SERVICES</Link>
+                <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/services">SERVICES</CustomLink>
 
-                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/experts">EXPERTS</Link>
+                <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline  `} to="/experts">EXPERTS</CustomLink>
 
-                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/about">ABOUT</Link>
+                <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/about">ABOUT</CustomLink>
 
-                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/login">LOGIN</Link>
+                {
+                    user ?
+                        (<CustomLink onClick={handleSingOut} className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="">LOGOUT</CustomLink>
+                        ) : (<CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/login">LOGIN</CustomLink >)
+
+                }
 
             </ul>
 
