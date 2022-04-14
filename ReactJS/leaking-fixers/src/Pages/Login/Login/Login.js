@@ -1,20 +1,29 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
 
-    const emailRef = useRef("");
-    const passwordRef = useRef("");
+    const emailRefLogin = useRef("");
+    const passwordRefLogin = useRef("");
+
+
+
+    const navigate = useNavigate();
+    const handleToRegister = () => {
+        navigate('/register');
+    }
 
 
     const handleLoginSubmit = event => {
         event.preventDefault();
 
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
+        const email = emailRefLogin.current.value;
+        const password = passwordRefLogin.current.value;
 
         console.log(email, "  ", password);
     }
+
 
 
     const handleGoogleClicked = () => {
@@ -23,11 +32,6 @@ const Login = () => {
     const handleFacebookClicked = () => {
 
     }
-
-
-
-
-
 
 
 
@@ -45,7 +49,7 @@ const Login = () => {
                     {/* <!-- Email input --> */}
                     <div class="mb-6">
                         <input
-                            ref={emailRef}
+                            ref={emailRefLogin}
                             type="text"
                             class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="exampleFormControlInput2"
@@ -57,7 +61,7 @@ const Login = () => {
                     {/* <!-- Password input --> */}
                     <div class="mb-6">
                         <input
-                            ref={passwordRef}
+                            ref={passwordRefLogin}
                             type="password"
                             class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="exampleFormControlInput2"
@@ -94,7 +98,7 @@ const Login = () => {
 
                         <p class="text-sm font-semibold mt-2 pt-1 mb-0">
                             Don't have an account?
-                            <a
+                            <a onClick={handleToRegister}
                                 href="#!"
                                 class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                             >Register</a
@@ -194,6 +198,7 @@ const Login = () => {
                 </form>
 
             </section>
+
         </div>
     );
 };

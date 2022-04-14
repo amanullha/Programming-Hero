@@ -6,6 +6,7 @@ import Header from "./Pages/Shared/Header/Header";
 import ServiceDetails from "./Pages/ServiceDetails/ServiceDetails";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Login from "./Pages/Login/Login/Login";
+import SignUp from "./Pages/Login/SingUp/SignUp";
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
 
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<SignUp />} />
 
           {/* <Route path="/" element={}/> */}
           <Route path="*" element={<NotFound />} />
