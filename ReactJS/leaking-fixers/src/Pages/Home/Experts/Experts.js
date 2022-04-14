@@ -27,7 +27,7 @@ const Experts = () => {
 
 
     return (
-        <div className='my-10 mx-auto'>
+        <div className='my-10 mx-auto' id='experts'>
             <div className='flex justify-center items-center gap-3 my-5 '>
                 <hr className='w-3/12 ' />
                 <h1 className='text-3xl text-center my-10'>Our Experts Mechanic</h1>

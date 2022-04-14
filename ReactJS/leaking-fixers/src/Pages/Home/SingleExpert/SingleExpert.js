@@ -3,6 +3,9 @@ import React from 'react';
 const SingleExpert = ({ expert }) => {
     const { id, name, img, } = expert;
 
+
+
+
     return (
         <div className="w-full rounded overflow-hidden shadow-lg mx-auto">
 

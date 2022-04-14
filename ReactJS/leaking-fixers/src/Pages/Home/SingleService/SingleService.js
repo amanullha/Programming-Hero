@@ -1,10 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SingleService = ({ service }) => {
 
 
     const { id, name, img, description } = service;
     const { small, large } = service.price;
+
+    const navigate = useNavigate();
+    const navigateToServiceDetails = serviceId => {
+        navigate(`/service/${serviceId}`);
+    }
 
     return (
         <div className='border-4 relative rounded-lg pb-10'>
@@ -32,7 +38,7 @@ const SingleService = ({ service }) => {
 
                 </div>
 
-                <button className='  bg-blue-600 text-white font-bold w-full hover:text-yellow-700 active:bg-green-600 active:text-white p-2'>Take</button>
+                <button onClick={() => navigateToServiceDetails(id)} className='  bg-blue-600 text-white font-bold w-full hover:text-yellow-700 active:bg-green-600 active:text-white p-2'>Take</button>
             </div>
 
         </div>

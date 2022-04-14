@@ -12,8 +12,10 @@ const Services = () => {
             .then(data => setServices(data.data))
     }, [])
 
+
+
     return (
-        <div>
+        <div id='services'>
             <div className='flex justify-center items-center gap-3 my-5 '>
                 <hr className='w-3/12 ' />
                 <h1 className='text-3xl text-center my-10'>Our Services</h1>

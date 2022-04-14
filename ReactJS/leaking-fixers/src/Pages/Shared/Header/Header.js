@@ -23,9 +23,14 @@ const Header = () => {
             </div>
 
             <ul className={`z-40 ${open ? "w-full" : ""} bg-black absolute md:static flex flex-col sm:flex-col md:flex-row duration-500 ease-in ${open ? 'top-12' : 'top-[-220px]'}  `}>
+
                 <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/home">HOME</Link>
-                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/about">ABOUT</Link>
+
                 <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/services">SERVICES</Link>
+
+                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/experts">EXPERTS</Link>
+
+                <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/about">ABOUT</Link>
 
                 <Link className={`${open ? "w-full" : " "} mx-2 my-1 hover:bg-white hover:text-black`} to="/login">LOGIN</Link>
 
