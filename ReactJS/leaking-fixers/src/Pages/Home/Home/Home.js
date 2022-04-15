@@ -6,7 +6,7 @@ import Services from '../Services/Services';
 const Home = () => {
     return (
         <div id='home'>
-            <h2>Home</h2>
+            
             <ReactSlider></ReactSlider>
             <Services id='services'></Services>
             <Experts></Experts>

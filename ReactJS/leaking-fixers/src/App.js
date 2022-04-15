@@ -9,6 +9,7 @@ import Login from "./Pages/Login/Login/Login";
 import SignUp from "./Pages/Login/SingUp/SignUp";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import CheckOut from "./Pages/CheckOut/CheckOut/CheckOut";
+import Loading from "./Pages/Shared/Loading/Loading";
 
 
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className=" mx-auto">
       <Header />
+
       <div className="p-5 my-10">
 
         <Routes>
