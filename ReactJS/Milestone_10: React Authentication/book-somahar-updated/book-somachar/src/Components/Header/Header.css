@@ -1,0 +1,10 @@
+.header-container{
+    background-color: aliceblue;
+    padding: 10px 0px;
+}
+.header-contents{
+   margin: 0 auto;
+   width: 90%;
+   letter-spacing: 0.05cm;
+
+}
