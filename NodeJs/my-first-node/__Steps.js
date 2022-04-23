@@ -1,4 +1,7 @@
 /**
+ -----------------------------
+ Basic server setup
+ ----------------------------
  
 1. create a folder (manually or mkdir)
 
@@ -27,6 +30,17 @@
 6. node index.js
 
 7. check your browser for that port
+
+
+-----------------------------
+get
+----------------------------
+1. cors middlewar
+
+
+------------------------------
+Post
+-------------------------------
 
 
 
