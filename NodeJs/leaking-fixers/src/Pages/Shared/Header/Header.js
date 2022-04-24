@@ -48,6 +48,14 @@ const Header = () => {
                 <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/about">ABOUT</CustomLink>
 
                 {
+                    user && <>
+                        <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/manage-services">MANAGE SERVICES</CustomLink>
+                        <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/add-service">ADD SERVICES</CustomLink>
+                    </>
+
+                }
+
+                {
                     user ?
                         (<CustomLink onClick={handleSingOut} className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="">LOGOUT</CustomLink>
                         ) : (<CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/login">LOGIN</CustomLink >)

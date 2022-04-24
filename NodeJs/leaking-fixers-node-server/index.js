@@ -62,6 +62,38 @@ async function run() {
             res.send(service);
         })
 
+        // POST Service data
+
+        app.post('/services', async (req, res) => {
+
+            const newService = req.body;
+            const result = await serviceCollection.insertOne(newService);
+            res.send(result);
+
+        })
+
+        // Delete a service with id
+
+        app.delete('/services/:serviceId', async (req, res) => {
+
+            const serviceId = req.params.serviceId;
+
+            const query = { _id: ObjectId(serviceId) }
+
+            const result = await serviceCollection.deleteOne(query);
+
+            res.send(result);
+
+        })
+
+
+
+
+
+
+
+
+
     }
     finally {
         // client.close();
