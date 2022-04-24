@@ -1,0 +1,105 @@
+[
+
+
+{
+    "id":1,
+    "name":"General diagnosis",
+    "price":{
+        "small":300,
+        "large":600
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/B6Qrdcw/r1.jpg"
+
+},
+
+{
+    "id":2,
+    "name":"Scanning (trouble code finding & erasing ",
+    "price":{
+        "small":1300,
+        "large":1300
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/x6C95NY/r2.jpg"
+
+},
+
+{
+    "id":3,
+    "name":"Fuel consumption test by machine",
+    "price":{
+        "small":1300,
+        "large":2000
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/cJzQJ8h/r3.jpg"
+
+},
+
+{
+    "id":4,
+    "name":"CVT Oil pressure calibration",
+    "price":{
+        "small":5000,
+        "large":7000
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/cJzQJ8h/r3.jpg"
+
+},
+
+{
+    "id":5,
+    "name":"Head light beam adjust by machine",
+    "price":{
+        "small":600,
+        "large":800
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/x6C95NY/r2.jpg"
+
+}
+,
+{
+    "id":6,
+    "name":"Fuel system service by machine",
+    "price":{
+        "small":2500,
+        "large":3500
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/B6Qrdcw/r1.jpg"
+
+},
+
+{
+    "id":7,
+    "name":"Fuel injector test by machine",
+    "price":{
+        "small":1000,
+        "large":2000
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/x6C95NY/r2.jpg"
+
+},
+
+{
+    "id":8,
+    "name":"Computerized Wheel Alignment-3D Toe ( Rear)",
+    "price":{
+        "small":1500,
+        "large":2000
+    },
+    "description": "We are well-equipped and well-prepared to protect your health and hygiene while serve you",
+    "img":"https://i.ibb.co/B6Qrdcw/r1.jpg"
+
+}
+
+
+
+
+
+
+]
