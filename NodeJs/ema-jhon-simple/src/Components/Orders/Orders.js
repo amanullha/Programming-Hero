@@ -14,17 +14,17 @@ const Orders = () => {
 
 
     const [products, setProducts] = useProducts();
-    const [cart, setCart] = useCart(products);
+    const [cart, setCart] = useCart();
 
     console.log(products);
 
     const deleteShoppingSingleItem = (clickedProduct) => {
 
         console.log(clickedProduct);
-        const newCart = cart.filter(item => item.id !== clickedProduct.id);
+        const newCart = cart.filter(item => item._id !== clickedProduct._id);
 
         setCart(newCart);
-        removeFromDb(clickedProduct.id);
+        removeFromDb(clickedProduct._id);
 
 
     }
@@ -35,7 +35,7 @@ const Orders = () => {
             <div className="product-container">
                 {
                     cart.map(product => <ReviewItem
-                        key={product.id}
+                        key={product._id}
                         product={product}
                         deleteShoppingSingleItem={deleteShoppingSingleItem}
                     ></ReviewItem>)

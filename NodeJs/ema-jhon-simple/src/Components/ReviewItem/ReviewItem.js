@@ -12,7 +12,7 @@ const ReviewItem = (props) => {
 
 
 
-    const { category, id, img, name, price, quantity, ratings, ratingsCount, seller, shipping, stock } = product;
+    const { category, __id, img, name, price, quantity, ratings, ratingsCount, seller, shipping, stock } = product;
 
     return (
         <div className='reviewItem-container'>

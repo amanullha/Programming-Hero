@@ -1,7 +1,8 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { getStoredCart } from "../../utilities/fakedb";
 
-const useCart = (products) => {
+const useCart = () => {
 
     const [cart, setCart] = useState([]);
 
@@ -11,21 +12,53 @@ const useCart = (products) => {
 
         const saveCart = [];
 
-        for (const id in storedCart) {
+        console.log("savedCart: ", storedCart);
 
-            const addedProduct = products.find(product => product.id === id);
+        const orderedIds = Object.keys(storedCart);
+        console.log(" orderedIds: ", orderedIds);
 
-            if (addedProduct) {
+        fetch('http://localhost:5000/productsByIds', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderedIds)
+        })
+            .then(res => res.json())
+            .then(data => {
 
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                saveCart.push(addedProduct);
-            }
-        }
-        setCart(saveCart);
+                const products = data;
+
+                for (const _id in storedCart) {
+
+                    const addedProduct = products.find(product => product._id === _id);
+
+                    if (addedProduct) {
+
+                        const quantity = storedCart[_id];
+                        addedProduct.quantity = quantity;
+                        saveCart.push(addedProduct);
+                    }
+                }
+                setCart(saveCart);
+                console.log("cart in saved: ", saveCart);
+            })
+
+        // for (const _id in storedCart) {
+
+        //     const addedProduct = products.find(product => product._id === _id);
+
+        //     if (addedProduct) {
+
+        //         const quantity = storedCart[_id];
+        //         addedProduct.quantity = quantity;
+        //         saveCart.push(addedProduct);
+        //     }
+        // }
+        // setCart(saveCart);
 
 
-    }, [products])
+    }, [])
 
     return [cart, setCart];
 };
