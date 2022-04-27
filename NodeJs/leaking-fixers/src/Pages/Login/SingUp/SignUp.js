@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSendPasswordResetEmail, useUpdateProfile } from 'react-firebase-hooks/auth';
@@ -48,9 +48,13 @@ const SignUp = () => {
         navigate('/login');
     }
 
+
+    // redirect to last page after login
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
     if (user) {
-        console.log(user);
-        navigate('/home')
+        navigate(from, { replace: true });
     }
 
     const handleRegisterSubmit = async (event) => {

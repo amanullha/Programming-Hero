@@ -20,26 +20,44 @@ const Header = () => {
         signOut(auth);
     }
 
+    (function () {
+        window.onresize = displayWindowSize;
+        window.onload = displayWindowSize;
+
+        function displayWindowSize() {
+            let myWidth = window.innerWidth;
+            if (myWidth >= 768) {
+                setOpen(false);
+            }
+        };
+
+
+    })();
+
+
+
+
 
     // animated under line on hover 
 
 
 
     return (
-        <nav className='text-white z-50 bg-black flex justify-between items-center md:px-5 sticky top-0'>
+        <nav className='text-white z-50 bg-black flex justify-between items-center md:px-5 sticky top-0  lg:px-40'>
 
-            <Link to='/'><div className={`${open ? 'hidden' : 'block'}`}>
+            {/* <Link to='/'><div className={`${open ? 'hidden' : 'block'}`}> */}
+            <Link to='/'><div className={``}>
                 <img width={200} src="logo.png" alt="" />
             </div></Link>
 
             <div onClick={() => setOpen(open ^ 1)} className={`md:hidden cursor-pointer   ${open ? "w-full" : ""} `}>
-                {open ? <XIcon className={` ${open ? "ml-auto py-4" : ""}`} width={40} /> : <MenuIcon width={40} />}
+                {open ? <XIcon className={` ${open ? "ml-auto py-4" : ""}`} width={40} /> : <MenuIcon width={40} height={40} />}
 
             </div>
 
-            <ul className={`z-40 ${open ? "w-full" : ""} bg-black absolute md:static flex flex-col sm:flex-col md:flex-row duration-500 ease-in ${open ? 'top-12' : 'top-[-220px]'}  `}>
+            <ul className={`z-40 ${open ? "w-full " : " "} bg-black absolute md:static flex flex-col sm:flex-col md:flex-row duration-500 ease-in ${open ? 'top-16 ' : 'top-[-220px]'}  `}>
 
-                <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/home">HOME</CustomLink>
+                <CustomLink className={`${open ? "w-full " : " "} mx-2 my-1 hover:underline `} to="/home">HOME</CustomLink>
 
                 <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/services">SERVICES</CustomLink>
 
@@ -51,6 +69,7 @@ const Header = () => {
                     user && <>
                         <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/manage-services">MANAGE SERVICES</CustomLink>
                         <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/add-service">ADD SERVICES</CustomLink>
+                        <CustomLink className={`${open ? "w-full" : " "} mx-2 my-1 hover:underline `} to="/orders">ORDERS</CustomLink>
                     </>
 
                 }

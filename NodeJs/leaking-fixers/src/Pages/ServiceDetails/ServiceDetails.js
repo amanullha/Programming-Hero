@@ -1,22 +1,15 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import useServiceDetails from '../../hooks/useServiceDetails';
 import SingleService from '../Home/SingleService/SingleService';
 
 const ServiceDetails = () => {
 
     const serviceId = useParams().serviceId;
 
-    const [service, setService] = useState({});
+    const [service, setService] = useServiceDetails(serviceId);
 
-    useEffect(() => {
-        // axios.get('services.json')
-        axios.get(`http://localhost:5000/services/${serviceId}`)
-            .then(data => {
-                setService(data.data);
-                console.log(data.data);
-            })
-    }, [])
 
     return (
         <div>
@@ -33,7 +26,7 @@ const ServiceDetails = () => {
 
             <div className='text-center'>
 
-                <Link to='/checkout'>
+                <Link to={`/checkout/${service.name}`}>
                     <button className='bg-blue-600 text-white px-4 py-1 font-bold rounded-full hover:text-yellow-500'>Proceed checkout</button>
                 </Link>
             </div>

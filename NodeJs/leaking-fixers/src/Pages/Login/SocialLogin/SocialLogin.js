@@ -1,14 +1,19 @@
 import React from 'react';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
 
 const SocialLogin = () => {
     const navigate = useNavigate();
+
+    // redirect to last page after login
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
 
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
@@ -20,9 +25,8 @@ const SocialLogin = () => {
     }
 
 
-
     if (googleUser || githubUser) {
-        navigate("/home");
+        navigate(from, { replace: true });
     }
 
     if (googleError || githubError) {

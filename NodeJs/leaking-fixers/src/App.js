@@ -12,6 +12,7 @@ import CheckOut from "./Pages/CheckOut/CheckOut/CheckOut";
 import Loading from "./Pages/Shared/Loading/Loading";
 import AddService from "./Pages/Home/AddService/AddService";
 import ManageServices from "./Pages/ManageServices/ManageServices";
+import Orders from "./Pages/Orders/Orders";
 
 
 
@@ -31,7 +32,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/service/:serviceId" element={<ServiceDetails />} />
 
-          <Route path="/checkout" element={<RequireAuth><CheckOut /></RequireAuth>} />
+          <Route path="/checkout/:serviceName" element={<RequireAuth><CheckOut /></RequireAuth>} />
 
           <Route path="/add-service" element={<RequireAuth>
             <AddService />
@@ -39,6 +40,10 @@ function App() {
 
           <Route path="/manage-services" element={<RequireAuth>
             <ManageServices />
+          </RequireAuth>} />
+
+          <Route path="/orders" element={<RequireAuth>
+            <Orders />
           </RequireAuth>} />
           {/* <Route path="/checkout" element={<CheckOut />} /> */}
 
