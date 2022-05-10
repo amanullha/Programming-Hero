@@ -1,0 +1,51 @@
+.active a{
+   /* background-color: red; */
+   color: rgb(105, 9, 111);
+}
+
+nav ul li{
+    
+    list-style-type: none;
+
+}
+nav ul li a{
+
+        text-decoration: none;
+        letter-spacing: 0.15rem;
+        font-size: large;
+        font-weight: bold;
+
+}
+
+.header-head{
+    border-radius: 0px 0px 100px 100px ;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    background-color: rgba(10, 158, 10, 0.173);
+    color: rgb(4, 64, 4);
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+li { 
+  position: relative; 
+ 
+}
+
+a:after {    
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: rgb(11, 11, 11);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+

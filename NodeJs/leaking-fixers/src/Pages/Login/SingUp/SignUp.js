@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSendPasswordResetEmail, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../hooks/useToken';
 
 const SignUp = () => {
 
@@ -25,6 +26,7 @@ const SignUp = () => {
     const [updateProfile, updating, updateProfileerror] = useUpdateProfile(auth);
 
 
+    const [token] = useToken(user);
 
 
 
@@ -53,7 +55,7 @@ const SignUp = () => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
 

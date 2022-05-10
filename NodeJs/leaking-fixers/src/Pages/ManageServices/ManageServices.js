@@ -17,7 +17,7 @@ const ManageServices = () => {
         if (proceed) {
             console.log(_id);
 
-            fetch(`http://localhost:5000/services/${_id}`, {
+            fetch(`https://calm-hollows-18504.herokuapp.com/services/${_id}`, {
                 method: "DELETE",
 
             })

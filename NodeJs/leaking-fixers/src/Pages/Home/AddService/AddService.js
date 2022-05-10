@@ -23,7 +23,7 @@ const AddService = () => {
         data.price = price;
         console.log(data);
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://calm-hollows-18504.herokuapp.com/services', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

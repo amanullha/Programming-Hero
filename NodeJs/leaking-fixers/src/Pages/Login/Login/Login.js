@@ -8,6 +8,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
 
@@ -21,6 +22,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user);
 
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -51,8 +53,11 @@ const Login = () => {
     let location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
-    if (user) {
-        //navigate(from, { replace: true });
+    console.log('from ', from);
+    console.log(token);
+    if (token) {
+        console.log("\n in token \n");
+        navigate(from, { replace: true });
     }
 
 
@@ -68,11 +73,11 @@ const Login = () => {
 
         errordiv = < p className='text-sm text-green-700' > Signed in successfully</p >;
 
-        const { data } = await axios.post('http://localhost:5000/login', { email });
+        const { data } = await axios.post('https://calm-hollows-18504.herokuapp.com/login', { email });
 
         localStorage.setItem('accessToken', data.accessToken);
 
-        navigate(from, { replace: true });
+
 
 
 

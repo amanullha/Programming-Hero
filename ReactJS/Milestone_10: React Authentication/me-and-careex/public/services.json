@@ -1,0 +1,72 @@
+[
+    {
+        "id":1,
+        "name":"Tootah Crowing",
+        "sumName":"Cosmetic Dentistry",
+        "charge":1500,
+        "image":"servicesImages/s1.jpg",
+        "description":"Tooth crowning is a standard dental procedure that involves covering a damaged tooth with a dental crown, a tooth-shaped cap that is placed over the natural tooth as a method of artificial restoration. It is designed to protect, strengthen, and improve the appearance of the affected tooth. It is used to cover the part of the tooth that is visible above the gum line, which is referred to as the crown."
+
+    },
+    {
+        "id":2,
+        "name":"Dental Bridges",
+        "sumName":"Prosthetic Dentistry",
+        "charge":1800,
+        "image":"servicesImages/s2.jpg",
+        "description":"If you have one or more missing teeth, a dental bridge can fill the gap with one or more artificial (false) teeth. A bridge is typically made of crowns on either side of the missing tooth or teeth supporting the pontic (false tooth) and is cemented in place"
+
+    },
+    {
+        "id":3,
+        "name":"Veneers",
+        "sumName":"Cosmetic Dentistry",
+        "charge":3000,
+        "image":"servicesImages/s3.jpg",
+        "description":"Veneers are thin coverings that are placed over the front (visible) part of the tooth. They look like natural teeth. Veneers can be used to correct a wide range of dental issues, such as: teeth that are stained and can't be whitened by bleaching. chipped or worn teeth."
+
+    },
+    {
+        "id":4,
+        "name":"Root Canal Treatment",
+        "sumName":"Root Canal",
+        "charge":3262,
+        "image":"servicesImages/s4.jpg",
+        "description":"Root canal treatment (endodontics) is a dental procedure used to treat infection at the centre of a tooth. Root canal treatment is not painful and can save a tooth that might otherwise have to be removed completely."
+
+    },
+    {
+        "id":5,
+        "name":"Acrylic Dentures",
+        "sumName":"Dentures",
+        "charge":650,
+        "image":"servicesImages/s5.jpg",
+        "description":"Acrylic dentures are dentures that are made with a plastic type of material. It is an easily moldable material, which makes it a good candidate for dentures as they require changes over a period of time. Acrylic is a common material used for partial and complete dentures.Dentures with Acrylic teeth are also lighter, making it easier to speak and keep your dentures firmly in place. In conclusion, we highly recommend acrylic teeth. Acrylic teeth are healthier for the patient, look great, chemically bond to the denture base, and are strong and comfortable."
+
+    },
+    {
+        "id":6,
+        "name":"Resin Fillings",
+        "sumName":"Resin Fillings",
+        "charge":950,
+        "image":"servicesImages/s6.jpg",
+        "description":"For patients who've developed a cavity recently, it was probably filled with a tooth-colored filling. The current new version of the old, metal fillings, tooth-colored fillings are produced with a composite resin material that fills and seals a cavity after the compromised part of the tooth has been eliminated."
+
+    },
+    {
+        "id":7,
+        "name":"Tooth Extraction",
+        "sumName":"General Dentistry",
+        "charge":1520,
+        "image":"servicesImages/s7.jpg",
+        "description":"Tooth extraction refers to the complete removal of one or more teeth from the mouth. This is a procedure that is usually performed by a dental surgeon. Milk teeth may be removed from a child's mouth without intervention from the dentist as they loosen as a matter of course to give way to permanent teeth."
+    },
+    {
+        "id":8,
+        "name":"Dental Cleaning",
+        "sumName":"General Dentistry",
+        "charge":1200,
+        "image":"servicesImages/s8.jpg",
+        "description":"Teeth cleaning is part of oral hygiene and involves the removal of dental plaque from teeth with the intention of preventing cavities, gingivitis, and periodontal disease."
+    }
+]

@@ -8,7 +8,7 @@ const useServiceDetails = (serviceId) => {
 
     useEffect(() => {
         // axios.get('services.json')
-        axios.get(`http://localhost:5000/services/${serviceId}`)
+        axios.get(`https://calm-hollows-18504.herokuapp.com/services/${serviceId}`)
             .then(data => {
                 setService(data.data);
                 console.log(data.data);

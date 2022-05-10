@@ -14,8 +14,8 @@ ONE TIME for your computer
 ONE TIME for each project
 -------------------------
 1. ->heroku create
-2.
-3.
+2. update git file
+3.->git push heroku main
 4.
 5.
 

@@ -28,7 +28,7 @@ const CheckOut = () => {
 
         }
 
-        axios.post('http://localhost:5000/orders', order)
+        axios.post('https://calm-hollows-18504.herokuapp.com/orders', order)
             .then(function (response) {
                 if (response.data.insertedId) {
                     toast("Placed Order");
