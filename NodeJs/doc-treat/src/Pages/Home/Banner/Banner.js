@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div>
 
-            <div class="hero min-h-screen bg-white bg-opacity-80">
+            <div class="hero min-h-screen ">
 
                 <div class="hero-content flex-col lg:flex-row-reverse">
 
