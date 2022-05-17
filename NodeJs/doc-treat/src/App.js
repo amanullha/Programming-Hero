@@ -8,11 +8,13 @@ function App() {
     <div className="App">
 
       <Header />
+      <div className='mx-2 md:mx-5 lg:mx-16 xl:mx-20'>
 
-      <Routes>
-        <Route path="/home" element={<Home />} />
-      </Routes>
-
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </div>
     </div>
   );
 }
