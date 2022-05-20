@@ -1,20 +1,39 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
 const NavBar = () => {
+
+    const [user, loading, error] = useAuthState(auth);
+
+    const navigate = useNavigate();
+
+
+    const goToStartingPage = () => {
+        navigate('/')
+    }
+    const logOutUser = () => {
+        signOut(auth);
+    }
 
 
     const menuItems = <>
 
-        <li><a>Home</a></li>
-        <li><a>Appiontment</a></li>
-        <li><a>Review</a></li>
-        <li><a>Contact Us</a></li>
-        <li><a>About</a></li>
-        <li><a>Login</a></li>
+        <li><Link to="/home">Home</Link ></li>
+        <li><Link to="/take-appointment">Appiontment</Link ></li>
+        <li><Link to="/review">Review</Link ></li>
+        <li><Link to="/contact-us">Contact Us</Link ></li>
+        <li ><Link to="/about">About</Link ></li>
+
+        <li >{user ? '' : <Link to="/login">Login</Link >}</li>
+
+        <li >{user ? "" : <Link to="sign-up">SignUp</Link >}</li>
 
     </>
 
 
-    const userProfile = <>
+    const userProfile = user ? <>
 
 
         <div className="dropdown dropdown-end ">
@@ -25,18 +44,18 @@ const NavBar = () => {
             </label>
             <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                    <a className="justify-between">
+                    <Link to='/profile' className="justify-between">
                         Profile
                         <span className="badge">New</span>
-                    </a>
+                    </Link >
                 </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
+                <li><Link to='/setting'>Settings</Link ></li>
+                <li><a onClick={logOutUser} >Logout</a ></li>
             </ul>
         </div>
 
 
-    </>
+    </> : '';
 
 
     return (
@@ -59,15 +78,15 @@ const NavBar = () => {
                     </ul>
 
                 </div>
-                {/* <a className=" text-2xl bg-gradient-to-r from-purple-400 to-pink-600">DocTreat</a> */}
+                {/* <a className=" text-2xl bg-gradient-to-r from-purple-400 to-pink-600">DocTreat</Link > */}
 
                 {/* <h1
-                    class="font-extrabold text-transparent text-4xl  md:text-6xl bg-clip-text bg-gradient-to-r from-yellow-700 to-green-600"
+                    className="font-extrabold text-transparent text-4xl  md:text-6xl bg-clip-text bg-gradient-to-r from-yellow-700 to-green-600"
                 >
                     DocTreat
                 </h1> */}
 
-                <img className='h-[60px] w-[180px]' src="logo.png" alt="" />
+                <img onClick={goToStartingPage} className='cursor-pointer h-[60px] w-[180px]' src="logo.png" alt="" />
 
             </div>
 
@@ -86,7 +105,7 @@ const NavBar = () => {
 
 
             {/* <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <a className="btn">Get started</Link >
             </div> */}
 
             <div className='lg:hidden'>

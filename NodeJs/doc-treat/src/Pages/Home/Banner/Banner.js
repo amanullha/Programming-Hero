@@ -4,11 +4,11 @@ const Banner = () => {
     return (
         <div>
 
-            <div class="hero min-h-screen ">
+            <div className="hero min-h-screen ">
 
-                <div class="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col lg:flex-row-reverse">
 
-                    <img className='' src="https://i.ibb.co/yX2gkCH/banner3.png" class="max-w-sm rounded-lg shadow-2xl" />
+                    <img className='' src="https://i.ibb.co/yX2gkCH/banner3.png" className="max-w-sm rounded-lg shadow-2xl" />
 
 
                     <div>
@@ -21,11 +21,11 @@ const Banner = () => {
 
 
 
-                        <p class="py-6">
+                        <p className="py-6">
                             Instant video consultation
                             from the best Doctors. Talk to a doctor within minutes. Our qualified network of doctors is available 24/7. You can get a consultation and prescription whenever you need. Patients and doctors can keep their previous consultation history and view online prescriptions.</p>
 
-                        <button class="btn border-0 bg-gradient-to-r from-primary to-secondary  first-letter:
+                        <button className="btn border-0 bg-gradient-to-r from-primary to-secondary  first-letter:
                         tracking-wider text-white font-bold ">Get Started</button>
                     </div>
 
