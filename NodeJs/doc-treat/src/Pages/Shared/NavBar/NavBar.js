@@ -23,7 +23,7 @@ const NavBar = () => {
     const logOutUser = () => {
         signOut(auth);
     }
-    console.log(user);
+    // console.log(user);
 
     const menuItems = <>
 

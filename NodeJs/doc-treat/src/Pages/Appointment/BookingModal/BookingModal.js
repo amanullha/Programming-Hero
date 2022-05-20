@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 
 
-const BookingModal = ({ treatment, date, setTreatment }) => {
+const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
 
 
     const { _id, name, slots } = treatment;
@@ -62,7 +62,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
 
 
 
-
+        refetch();
 
         setTreatment(null);
     }
