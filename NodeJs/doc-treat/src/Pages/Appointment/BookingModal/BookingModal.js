@@ -1,5 +1,8 @@
 import React from 'react';
 import { format } from 'date-fns';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
 
 
 
@@ -7,6 +10,10 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
 
 
     const { _id, name, slots } = treatment;
+    const [user, loading] = useAuthState(auth);
+
+    const formateDate = format(date, 'PP');
+
 
     const handleBooking = (e) => {
         e.preventDefault();
@@ -14,13 +21,56 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
         const slot = e.target.slot.value;
         console.log(slot);
 
+        const bookingData = {
+
+            treatmentId: _id,
+            treatmentName: name,
+            date: formateDate,
+            slot,
+            patient: user?.email,
+            patientName: user.displayName,
+            phone: e.target.phone.value
+        }
+
+
+
+        fetch('http://localhost:5000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookingData)
+        })
+            .then(res => res.json())
+            .then(data => {
+
+                if (data?.success) {
+                    toast.success(`Appointment is set, ${formateDate} at ${slot} `);
+                }
+                else if (!date?.success && data?.booking) {
+
+                    toast.warning(`You have already taken appointment, ${formateDate} at ${slot} for ${name}`);
+
+                }
+
+
+
+
+            })
+
+
+
+
+
+
+
         setTreatment(null);
     }
 
     return (
         <div>
 
-            {/* <label for="my-modal-6" className="btn modal-button">open modal</label> */}
+            {/* <label htmlFor="my-modal-6" className="btn modal-button">open modal</label> */}
 
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
 
@@ -28,24 +78,26 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
                 <div className="modal-box">
 
 
-                    <label for="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <h3 className="font-bold text-lg text-secondary">Booking for : {name}</h3>
+                    <h3 className="text-center font-bold text-2xl text-secondary">Booking for : {name}</h3>
 
                     <form onSubmit={handleBooking} className='flex flex-col gap-3 my-8 justify-center items-center'>
 
-                        <input name='date' type="text" placeholder="Date" className="input input-bordered w-full max-w-xs " readOnly value={format(date, 'PP')} />
+                        <input name='date' type="text" placeholder="Date" className="input input-bordered w-full max-w-xs " disabled value={format(date, 'PP')} />
 
                         <select name='slot' className="select select-bordered w-full max-w-xs">
                             {
-                                slots.map(slot => <option>{slot}</option>)
+                                slots.map((slot, index) => <option key={index}>{slot}</option>)
                             }
                         </select>
-                        <input name="name" type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" />
 
-                        <input name='email' type="text" placeholder="Email" className="input input-bordered w-full max-w-xs" />
 
-                        <input name='phone' type="text" placeholder="Phone" className="input input-bordered w-full max-w-xs" />
+                        <input name="name" type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" value={user?.displayName || ''} disabled />
+
+                        <input name='email' type="text" placeholder="Email" className="input input-bordered w-full max-w-xs" value={user?.email || ''} disabled />
+
+                        <input name='phone' type="number" placeholder="Phone" className="input input-bordered w-full max-w-xs" required />
 
 
 
@@ -56,7 +108,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
 
 
                     {/* <div className="modal-action">
-                        <label for="booking-modal" className="btn">BOOK</label>
+                        <label htmlFor="booking-modal" className="btn">BOOK</label>
                     </div> */}
 
 

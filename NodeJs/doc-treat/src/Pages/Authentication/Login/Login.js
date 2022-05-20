@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import MyLoading from '../../Shared/MyLoading/MyLoading';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -21,6 +21,8 @@ const Login = () => {
 
 
     const navigate = useNavigate();
+    let location = useLocation();
+
 
 
     if (loading) {
@@ -33,8 +35,12 @@ const Login = () => {
         errorMessage = <span className="label-text-alt text-red-500 ">{error?.message}</span>
     }
 
+
+    let from = location.state?.from?.pathname || "/";
+
     if (user) {
-        console.log(user);
+        navigate(from, { replace: true });
+
     }
 
 
@@ -132,6 +138,14 @@ const Login = () => {
                         </div>
 
                         {errorMessage}
+
+                        <div className='flex items-center justify-between mb-3'>
+                            <div className='flex items-center gap-1'>
+                                <input type="checkbox" name="saveMe" id="saveMe" />
+                                <span className='text-sm'>Remember me</span>
+                            </div>
+                            <h1 onClick={()=>navigate('/forget-password')} className='text-sm text-secondary font-bold cursor-pointer'>Forget password?</h1>
+                        </div>
 
                         <input className='btn w-full max-w-xs text-white tracking-wider' type="submit" value="LOGIN" />
 
