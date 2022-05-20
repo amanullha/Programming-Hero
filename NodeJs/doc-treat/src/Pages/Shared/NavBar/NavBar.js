@@ -23,7 +23,6 @@ const NavBar = () => {
     const logOutUser = () => {
         signOut(auth);
     }
-    // console.log(user);
 
     const menuItems = <>
 
@@ -46,7 +45,7 @@ const NavBar = () => {
         <div className="dropdown dropdown-end ">
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full border-2 border-secondary" title={user?.displayName}>
-                    {/* <img src="https://api.lorem.space/image/face?hash=33791" /> */}
+
                     {
                         user?.photoURL ? <img src={user?.photoURL} /> :
                             <FontAwesomeIcon className='w-full h-full ' icon={faUserCircle} />
@@ -79,7 +78,6 @@ const NavBar = () => {
 
 
 
-            {/* <div className="navbar-start bg-slate-400 "> */}
             <div className="  ">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -93,13 +91,7 @@ const NavBar = () => {
                     </ul>
 
                 </div>
-                {/* <a className=" text-2xl bg-gradient-to-r from-purple-400 to-pink-600">DocTreat</Link > */}
 
-                {/* <h1
-                    className="font-extrabold text-transparent text-4xl  md:text-6xl bg-clip-text bg-gradient-to-r from-yellow-700 to-green-600"
-                >
-                    DocTreat
-                </h1> */}
 
                 <img onClick={goToStartingPage} className='cursor-pointer h-[60px] w-[180px]' src="logo.png" alt="" />
 
@@ -119,9 +111,7 @@ const NavBar = () => {
             </div>
 
 
-            {/* <div className="navbar-end">
-                <a className="btn">Get started</Link >
-            </div> */}
+
 
             <div className='lg:hidden'>
                 {
