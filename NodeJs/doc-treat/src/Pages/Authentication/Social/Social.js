@@ -14,7 +14,7 @@ const Social = () => {
 
 
     if (loading) {
-        // return <button class="btn loading">loading</button>
+        // return <button className="btn loading">loading</button>
         return <MyLoading />
     }
 
@@ -36,7 +36,7 @@ const Social = () => {
                 className='btn btn-outline'
             >Continue with Google</button>
 
-            {error ? <span class="label-text-alt text-red-500">{error.message}</span> : ""}
+            {error ? <span className="label-text-alt text-red-500">{error.message}</span> : ""}
 
 
         </div>

@@ -12,6 +12,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import { HelmetProvider } from 'react-helmet-async';
 
 const queryClient = new QueryClient()
 
@@ -22,9 +23,13 @@ root.render(
 
     <QueryClientProvider client={queryClient}>
 
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <HelmetProvider>
+
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+
+      </HelmetProvider>
 
     </QueryClientProvider>
 

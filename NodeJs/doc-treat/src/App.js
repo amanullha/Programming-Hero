@@ -8,10 +8,13 @@ import Login from './Pages/Authentication/Login/Login';
 import SignUp from './Pages/Authentication/SignUp/SignUp';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 import ForgetPassword from './Pages/Authentication/ForgetPassword/ForgetPassword';
-import VerifyEmail from './Pages/Authentication/VerifyEmail/VerifyEmail';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Deshboard from './Pages/Deshboard/Deshboard';
+import MyAppointment from './Pages/Deshboard/MyAppointment';
+import Review from './Pages/Deshboard/Review';
+import MyHistory from './Pages/Deshboard/MyHistory';
 
 
 function App() {
@@ -28,9 +31,17 @@ function App() {
 
           <Route path="/take-appointment" element={<RequireAuth><TakeAppointment /></RequireAuth>} />
 
+
+          <Route path="/deshboard" element={<RequireAuth><Deshboard /></RequireAuth>} >
+            <Route index element={<MyAppointment />}></Route>
+            <Route path="reviews" element={<Review />}></Route>
+            <Route path="history" element={<MyHistory />}></Route>
+
+          </Route>
+
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="//forget-password" element={<ForgetPassword />} />
+          <Route path="/forget-password" element={<ForgetPassword />} />
 
         </Routes>
       </div>

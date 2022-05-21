@@ -1,13 +1,14 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { Helmet } from 'react-helmet-async';
 
-
+// import {Helmet} from 'react-helmet'
 
 
 const NavBar = () => {
@@ -32,9 +33,15 @@ const NavBar = () => {
         <li><Link to="/contact-us">Contact Us</Link ></li>
         <li ><Link to="/about">About</Link ></li>
 
-        <li >{user ? '' : <Link to="/login">Login</Link >}</li>
 
-        <li >{user ? "" : <Link to="sign-up">SignUp</Link >}</li>
+
+        {user ? <li> <Link to="deshboard">Deshboard</Link ></li> : ""}
+
+
+        {user ? '' : <li><Link to="/login">Login</Link ></li>}
+
+        {user ? "" : <li><Link to="sign-up">SignUp</Link ></li>}
+
 
     </>
 
@@ -72,9 +79,22 @@ const NavBar = () => {
     </> : '';
 
 
+
+    // // Add dynamic title 
+    // let location = useLocation();
+    // let currentState = location.pathname.slice(1, location.pathname.length);
+
+
+
+
     return (
         <div className="navbar bg-base-100 flex justify-between items-center">
 
+
+            {/* add dynamic title  */}
+            {/* <Helmet>
+                <title>DocTreat{currentState.length ? ' | ' : ''}{currentState.length ? currentState : ''}</title>
+            </Helmet> */}
 
 
 
