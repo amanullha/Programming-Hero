@@ -3,14 +3,19 @@ import auth from '../../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import MyLoading from '../../Shared/MyLoading/MyLoading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 
 
 const Social = () => {
 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
+    const [token, setToken] = useToken(user);
+
+
     const navigate = useNavigate();
     let location = useLocation();
+
 
 
     if (loading) {
@@ -20,10 +25,15 @@ const Social = () => {
 
     let from = location.state?.from?.pathname || "/";
 
-    if (user) {
+    if (token) {
+        
         navigate(from, { replace: true });
 
     }
+    // if (user) {
+    //     navigate(from, { replace: true });
+
+    // }
 
 
 

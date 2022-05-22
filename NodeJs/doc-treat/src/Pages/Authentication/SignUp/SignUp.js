@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateProfile } from 'react-firebase-hooks/auth';
 import MyLoading from '../../Shared/MyLoading/MyLoading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 
 const SignUp = () => {
 
@@ -21,7 +22,7 @@ const SignUp = () => {
 
     const [sendEmailVerification, sending, verifyError] = useSendEmailVerification(auth);
 
-
+    const [token, setToken] = useToken(user);
 
     const navigate = useNavigate();
     let location = useLocation();
@@ -41,10 +42,14 @@ const SignUp = () => {
 
     let from = location.state?.from?.pathname || "/";
 
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
 
     }
+    // if (user) {
+    //      navigate(from, { replace: true });
+
+    // }
 
 
     const onSubmit = async (data) => {

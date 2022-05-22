@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Social from '../Social/Social';
 import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import MyLoading from '../../Shared/MyLoading/MyLoading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 
 
 
@@ -19,10 +20,21 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token, setToken] = useToken(user)
+
 
     const navigate = useNavigate();
     let location = useLocation();
 
+    let from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+
+        if (token) {
+            navigate(from, { replace: true });
+
+        }
+    }, [token, from, navigate])
 
 
     if (loading) {
@@ -36,12 +48,11 @@ const Login = () => {
     }
 
 
-    let from = location.state?.from?.pathname || "/";
 
-    if (user) {
-        navigate(from, { replace: true });
+    // if (user) {
+    //     navigate(from, { replace: true });
 
-    }
+    // }
 
 
 
@@ -144,7 +155,7 @@ const Login = () => {
                                 <input type="checkbox" name="saveMe" id="saveMe" />
                                 <span className='text-sm'>Remember me</span>
                             </div>
-                            <h1 onClick={()=>navigate('/forget-password')} className='text-sm text-secondary font-bold cursor-pointer'>Forget password?</h1>
+                            <h1 onClick={() => navigate('/forget-password')} className='text-sm text-secondary font-bold cursor-pointer'>Forget password?</h1>
                         </div>
 
                         <input className='btn w-full max-w-xs text-white tracking-wider' type="submit" value="LOGIN" />
