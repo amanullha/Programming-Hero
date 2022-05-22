@@ -1,11 +1,25 @@
 import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../hooks/useAdmin';
+import MyLoading from '../Shared/MyLoading/MyLoading';
 
 const Deshboard = () => {
 
-    const [openDrawer, setOpenDrawer] = useState(false)
+    const [user, loading, error] = useAuthState(auth);
+
+    const [openDrawer, setOpenDrawer] = useState(false);
+    
+    const [admin, setAdmin] = useAdmin(user);
+
+
+    if (loading) {
+
+        return <MyLoading />
+    }
 
     const drawerToggler = () => {
         setOpenDrawer(openDrawer ^ 1);
@@ -54,7 +68,7 @@ const Deshboard = () => {
                         <li><Link to='/deshboard'>My Appointments</Link></li>
                         <li><Link to='/deshboard/reviews'>My Review</Link></li>
                         <li><Link to='/deshboard/history'>My History</Link></li>
-                        <li><Link to='/deshboard/users'>All Users</Link></li>
+                        {admin ? <li><Link to='/deshboard/users'>All Users</Link></li> : ''}
                     </ul>
 
                 </div>

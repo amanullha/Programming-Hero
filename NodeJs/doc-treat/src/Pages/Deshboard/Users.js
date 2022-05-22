@@ -1,12 +1,19 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { ToastContainer } from 'react-toastify';
 import MyLoading from '../Shared/MyLoading/MyLoading';
 import UserRow from './UserRow';
 
 const Users = () => {
 
 
-    const { data: users, isLoading } = useQuery('users', () => fetch('http://localhost:5000/users').then(res => res.json()))
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
 
 
     if (isLoading) {
@@ -25,28 +32,28 @@ const Users = () => {
                 <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Services</th>
-                            <th>Date</th>
-                            <th>Time</th>
+                        <tr >
+                            <th className='text-xl'>User Email</th>
+                            <th className='text-xl'>Role</th>
+                            <th className='text-xl'>Operation</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                     {
-                         users.map(user=><UserRow 
-                         key={user._id}
-                         user={user}
+                        {
+                            users?.map(user => <UserRow
+                                key={user._id}
+                                user={user}
+                                refetch={refetch}
 
-                         ></UserRow>)
-                     }
+                            ></UserRow>)
+                        }
 
 
                     </tbody>
                 </table>
-            </div>
 
+            </div>
         </div>
     );
 };

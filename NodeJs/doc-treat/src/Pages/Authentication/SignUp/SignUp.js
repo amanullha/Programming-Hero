@@ -36,7 +36,7 @@ const SignUp = () => {
         </div>
     }
 
-    if (error || UpdateError) {
+    if (error || UpdateError || verifyError) {
         errorMessage = <span className="label-text-alt text-red-500 ">{error?.message} || {UpdateError?.message} || {verifyError.message}</span>
     }
 
