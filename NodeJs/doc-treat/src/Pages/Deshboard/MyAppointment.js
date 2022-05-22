@@ -1,5 +1,8 @@
+import { signOut } from 'firebase/auth';
 import React, { useState, useEffect } from 'react';
+import { useNavigation } from 'react-day-picker';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import MyLoading from '../Shared/MyLoading/MyLoading';
 
@@ -7,6 +10,8 @@ const MyAppointment = () => {
 
     const [appointments, setAppointments] = useState([])
     const [user, loading, error] = useAuthState(auth);
+
+    const navigate = useNavigate();
 
     if (loading) {
         <MyLoading />
@@ -16,9 +21,31 @@ const MyAppointment = () => {
     useEffect(() => {
 
         if (user) {
-            fetch(`http://localhost:5000/myBooking?patient=${user.email}`)
-                .then(res => res.json())
-                .then(data => setAppointments(data))
+            fetch(`http://localhost:5000/myBooking?patient=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    console.log(res);
+
+                    if (res.status === 401 || res.status === 403) {
+                        
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/login')
+                    }
+
+                    return res.json();
+                })
+                .then(data => {
+
+
+
+                    setAppointments(data);
+                })
         }
 
 
@@ -40,8 +67,8 @@ const MyAppointment = () => {
 
 
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

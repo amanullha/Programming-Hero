@@ -15,6 +15,7 @@ import Deshboard from './Pages/Deshboard/Deshboard';
 import MyAppointment from './Pages/Deshboard/MyAppointment';
 import Review from './Pages/Deshboard/Review';
 import MyHistory from './Pages/Deshboard/MyHistory';
+import Users from './Pages/Deshboard/Users';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <Route index element={<MyAppointment />}></Route>
             <Route path="reviews" element={<Review />}></Route>
             <Route path="history" element={<MyHistory />}></Route>
+            <Route path="users" element={<Users />}></Route>
 
           </Route>
 

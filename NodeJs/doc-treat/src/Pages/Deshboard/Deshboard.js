@@ -47,13 +47,14 @@ const Deshboard = () => {
 
 
                 <div className="drawer-side ">
-                    <label for="deshboard-sidebar" className="drawer-overlay"></label>
+                    <label htmlFor="deshboard-sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4  overflow-y-auto w-52 bg-base-100 text-base-content bg-white ">
 
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to='/deshboard'>My Appointments</Link></li>
                         <li><Link to='/deshboard/reviews'>My Review</Link></li>
                         <li><Link to='/deshboard/history'>My History</Link></li>
+                        <li><Link to='/deshboard/users'>All Users</Link></li>
                     </ul>
 
                 </div>
