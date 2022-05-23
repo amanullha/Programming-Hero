@@ -18,6 +18,7 @@ import MyHistory from './Pages/Deshboard/MyHistory';
 import Users from './Pages/Deshboard/Users';
 import RequireAdmin from './Pages/Authentication/RequireAdmin/RequireAdmin';
 import AddDoctor from './Pages/Deshboard/AddDoctor';
+import ManageDoctor from './Pages/Deshboard/ManageDoctor';
 
 
 function App() {
@@ -36,12 +37,16 @@ function App() {
 
 
           <Route path="/deshboard" element={<RequireAuth><Deshboard /></RequireAuth>} >
+
             <Route index element={<MyAppointment />}></Route>
             <Route path="reviews" element={<Review />}></Route>
             <Route path="history" element={<MyHistory />}></Route>
 
             <Route path="users" element={<RequireAdmin><Users /></RequireAdmin>}></Route>
+
             <Route path="add-doctor" element={<RequireAdmin><AddDoctor /></RequireAdmin>}></Route>
+
+            <Route path="manage-doctor" element={<RequireAdmin><ManageDoctor /></RequireAdmin>}></Route>
 
           </Route>
 

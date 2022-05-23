@@ -12,7 +12,7 @@ const Deshboard = () => {
     const [user, loading, error] = useAuthState(auth);
 
     const [openDrawer, setOpenDrawer] = useState(false);
-    
+
     const [admin, setAdmin] = useAdmin(user);
 
 
@@ -68,8 +68,11 @@ const Deshboard = () => {
                         <li><Link to='/deshboard'>My Appointments</Link></li>
                         <li><Link to='/deshboard/reviews'>My Review</Link></li>
                         <li><Link to='/deshboard/history'>My History</Link></li>
+
                         {admin ? <li><Link to='/deshboard/users'>All Users</Link></li> : ''}
+
                         {admin ? <li><Link to='/deshboard/add-doctor'>Add new doctor</Link></li> : ''}
+                        {admin ? <li><Link to='/deshboard/manage-doctor'>Manage doctor</Link></li> : ''}
                     </ul>
 
                 </div>
