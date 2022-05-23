@@ -8,7 +8,6 @@ import MyLoading from '../../Shared/MyLoading/MyLoading';
 const AvailableAppointment = ({ date }) => {
 
 
-    // const [services, setServices] = useState([]);
     const [treatment, setTreatment] = useState(null);
 
     const formateDate = format(date, 'PP');
@@ -22,15 +21,7 @@ const AvailableAppointment = ({ date }) => {
         return <MyLoading />
     }
 
-    // useEffect(() => {
 
-    //     fetch(`http://localhost:5000/available?date=${formateDate}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setServices(data);
-    //         })
-
-    // }, [formateDate])
 
 
 

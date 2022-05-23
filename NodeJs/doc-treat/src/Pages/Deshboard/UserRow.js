@@ -24,7 +24,7 @@ const UserRow = ({ user, refetch }) => {
                 return res.json();
             })
             .then(data => {
-                // console.log("mama ", data);
+                console.log("mama ", data);
 
                 if (data.modifiedCount > 0) {
                     toast.success("Successfully made an Admin")
@@ -41,7 +41,7 @@ const UserRow = ({ user, refetch }) => {
 
         <tr>
             <th>{email}</th>
-            <th>{role !== "admin" ? <button onClick={handleMakeAdmin} className='btn btn-xs'>Make Admin</button> : <button className='btn btn-xs w-[95px] bg-green-100 text-black hover:text-white ' >Admin</button>}</th>
+            <th>{role !== "admin" ? <button onClick={handleMakeAdmin} className='btn btn-xs'>Make Admin</button> : <button className='rounded-lg border-2 hover:text-yellow-800 w-[95px] bg-green-100 text-black hover:text-white ' >Admin</button>}</th>
             <th><button className='btn btn-xs'>Remove user</button></th>
         </tr>
 

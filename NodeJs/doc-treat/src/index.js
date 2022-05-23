@@ -23,17 +23,17 @@ root.render(
 
 
 
-    <HelmetProvider>
 
-      <QueryClientProvider client={queryClient}>
 
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-        
-      </QueryClientProvider>
+      </HelmetProvider>
+    </QueryClientProvider>
 
-    </HelmetProvider>
+
 
 
 

@@ -14,7 +14,9 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
 
     const formateDate = format(date, 'PP');
 
-
+    if (loading) {
+        return <loading />
+    }
     const handleBooking = (e) => {
         e.preventDefault();
 
@@ -46,8 +48,9 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
 
                 if (data?.success) {
                     toast.success(`Appointment is set, ${formateDate} at ${slot} `);
+
                 }
-                else if (!date?.success && data?.booking) {
+                else if (!data?.success && data?.booking) {
 
                     toast.warning(`You have already taken appointment, ${formateDate} at ${slot} for ${name}`);
 
@@ -62,8 +65,8 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
 
 
 
-        refetch();
 
+        refetch();
         setTreatment(null);
     }
 
@@ -97,7 +100,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
 
                         <input name='email' type="text" placeholder="Email" className="input input-bordered w-full max-w-xs" value={user?.email || ''} disabled />
 
-                        <input name='phone' type="number" placeholder="Phone" className="input input-bordered w-full max-w-xs" required />
+                        <input name='phone' type="number" placeholder="Phone" className="input input-bordered w-full max-w-xs" />
 
 
 

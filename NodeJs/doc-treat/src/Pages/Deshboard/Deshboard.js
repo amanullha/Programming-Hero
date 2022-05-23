@@ -69,6 +69,7 @@ const Deshboard = () => {
                         <li><Link to='/deshboard/reviews'>My Review</Link></li>
                         <li><Link to='/deshboard/history'>My History</Link></li>
                         {admin ? <li><Link to='/deshboard/users'>All Users</Link></li> : ''}
+                        {admin ? <li><Link to='/deshboard/add-doctor'>Add new doctor</Link></li> : ''}
                     </ul>
 
                 </div>
