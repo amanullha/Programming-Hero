@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-const { ObjectId  } = mongoose.Schema.Types
+const { ObjectId } = mongoose.Schema.Types
 
 // 1. schema design
 
@@ -68,9 +68,9 @@ const productSchema = mongoose.Schema({
             required: true,
         },
         id: {
-            type:ObjectId,
-            ref:"Brand",
-            required:true,
+            type: ObjectId,
+            ref: "Brand",
+            required: true,
         }
     }
 

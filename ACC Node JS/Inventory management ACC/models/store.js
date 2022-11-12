@@ -12,32 +12,32 @@ const storeSchema = mongoose.Schema({
         unique: true,
         trim: true,
         lowercase: true,
-        enum:{
-            values:["dhaka","chattogram","rajshahi","sylhet","khulna","barishal","rangpur","mymenshing"],
-            message:"{VALUE} is not a valid name"
+        enum: {
+            values: ["dhaka", "chattogram", "rajshahi", "sylhet", "khulna", "barishal", "rangpur", "mymenshing"],
+            message: "{VALUE} is not a valid name"
         }
 
     },
 
     description: String,
 
-  
-   
+
+
     status: {
         type: String,
         enum: ["active", "in-active"],
         default: "active"
     },
 
-manager:{
-    name:String,
-    contactNumber:String,
-    id:{
-        type:ObjectId,
-        ref:'User'
-    }
+    manager: {
+        name: String,
+        contactNumber: String,
+        id: {
+            type: ObjectId,
+            ref: 'User'
+        }
 
-}
+    }
 
 
 
@@ -49,7 +49,7 @@ manager:{
 
 const Store = mongoose.model('Store', storeSchema);
 
-exports = Store;
+module.exports = Store;
 
 
 

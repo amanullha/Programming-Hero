@@ -7,31 +7,31 @@ const { ObjectId } = mongoose.Schema.Types
 
 const categorySchema = mongoose.Schema({
 
-    name:{
-        type:String,
-        trim:true,
-        require:[true,"Please provide a category name"],
-        lowercase:true,
-        unique:true,
+    name: {
+        type: String,
+        trim: true,
+        require: [true, "Please provide a category name"],
+        lowercase: true,
+        unique: true,
     },
-    description:String,
+    description: String,
 
-    imageUrl:{
-        type:String,
-        validate:[validator.isURL,"Please valid URL"]
+    imageUrl: {
+        type: String,
+        validate: [validator.isURL, "Please valid URL"]
     }
 
 
 
-},{
-    timestamps:true
+}, {
+    timestamps: true
 })
 
 
 
 const Category = mongoose.model('Category', categorySchema);
 
-exports = Category;
+module.exports = Category;
 
 
 
