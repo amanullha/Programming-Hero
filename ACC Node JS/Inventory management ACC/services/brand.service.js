@@ -3,7 +3,7 @@ const Brand = require('../models/Brand')
 exports.createBrandService = async (data) => {
 
 
-    const result =await Brand.create(data)
+    const result = await Brand.create(data)
 
     return result;
 }
@@ -11,7 +11,7 @@ exports.createBrandService = async (data) => {
 exports.getBrandService = async () => {
 
 
-    const result = await Brand.find({}).select('-products -suppliers');
+    const result = await Brand.find({}).populate('products')
 
     return result;
 }
@@ -22,10 +22,10 @@ exports.getBrandByIdService = async (id) => {
 
     return result;
 }
-exports.updateBrandService = async (id,data) => {
+exports.updateBrandService = async (id, data) => {
 
 
-    const result = await Brand.updateOne({_id:id},data,{runValidators:true})
+    const result = await Brand.updateOne({ _id: id }, data, { runValidators: true })
 
     return result;
 }

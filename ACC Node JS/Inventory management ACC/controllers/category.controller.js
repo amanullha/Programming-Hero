@@ -1,4 +1,4 @@
-const { createCategoryService, getCategoryService } = require("../services/category.service");
+const { createCategoryService, getCategoryService, getByIdCategoryService, updateByIdCategoryService } = require("../services/category.service");
 
 
 

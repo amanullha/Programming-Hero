@@ -204,6 +204,31 @@ exports.deleteProductById = async (req, res, next) => {
 
 
 
+exports.fileUpload = async (req, res, next) => {
+
+    try {
+
+        // for one more images use 'files' instants of 'file'
+
+        res.status(200).json({
+            success: true,
+            message: "File upload successfully",
+            data: req.files,
+        })
+
+
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            message: "Couldn't upload the file",
+            error: error.message,
+        })
+    }
+
+}
+
+
+
 
 
 

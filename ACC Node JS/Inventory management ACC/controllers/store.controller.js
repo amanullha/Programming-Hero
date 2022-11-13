@@ -1,4 +1,4 @@
-
+const { getStoreService, createStoreService, getByIdCategoryService, updateByIdCategoryService } = require('../services/store.service')
 
 exports.getStore = async (req, res, next) => {
     console.log("get");
@@ -51,7 +51,7 @@ exports.createStore = async (req, res, next) => {
 
 }
 
-exports.getStoreByIdService = async (req, res, next) => {
+exports.getStoreById = async (req, res, next) => {
     console.log("get by id ");
 
     try {
